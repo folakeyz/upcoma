@@ -8,10 +8,11 @@ const SERVER_ERROR = "There was an error contacting the server.";
 
 async function getPlaylist() {
   const data = await axiosInstance({
-    url: "/playlist",
+    url: "/playlist/me",
     method: "GET",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${getStoredUser().token}`,
     },
   });
   return data?.data?.data;

@@ -3,6 +3,8 @@ import LabelLink from "./LabelLink";
 import ProducerLink from "./ProducerLink";
 import ArtistLink from "./ArtistLink";
 import GlobalLink from "./GlobalLink";
+import DJLink from "./DJLink";
+import ComedianLink from "./ComedianLink";
 
 export const Navigator = ({ role, home }) => {
   console.log(role, "role");
@@ -13,6 +15,10 @@ export const Navigator = ({ role, home }) => {
       return <ProducerLink />;
     case "Artist":
       return <ArtistLink />;
+    case "DJ":
+      return <DJLink />;
+    case "Comedian":
+      return <ComedianLink />;
     default:
       <></>;
   }

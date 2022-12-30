@@ -10,6 +10,7 @@ export { default as UserCard } from "./Cards/User";
 export { default as DJCard } from "./Cards/DJ";
 export { default as CommentsCard } from "./Cards/Comments";
 export { default as PlaylistCard } from "./Cards/Playlist";
+export { default as CompetitionCard } from "./Cards/Competition";
 export { default as Player } from "./Player";
 export { default as Options } from "./mocks";
 export { default as Footer } from "./Footer";

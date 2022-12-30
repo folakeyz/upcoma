@@ -33,9 +33,8 @@ async function uploadSong(formData) {
 
 async function deleteSong(formData) {
   const data = await axiosInstance({
-    url: `/song`,
+    url: `/song/${formData}`,
     method: "DELETE",
-    data: formData,
     headers: {
       "Content-Type": "multipart/form-data",
       Authorization: `Bearer ${getStoredUser().token}`,

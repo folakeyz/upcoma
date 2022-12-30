@@ -79,6 +79,10 @@ const ComedyCard = ({ song, play, liked = [] }) => {
               <FaClipboardList />
               &nbsp;&nbsp;Add to Playlist
             </MenuItem>
+            {/* <MenuItem onClick={myPlaylist}>
+              <FaClipboardList />
+              &nbsp;&nbsp;Add to My Playlist
+            </MenuItem> */}
             <MenuItem className={styles.menu}>
               <FaShareAlt />
               &nbsp;&nbsp;

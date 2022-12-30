@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { usePlaySong, useSong } from "../Global/Songs/hooks";
 import {
+  CompetitionCard,
   EventCard,
   Player,
   SongCard,
@@ -20,12 +21,23 @@ import { useProducer } from "../Global/Producer/hooks";
 import { useDJ } from "../Global/DJ/hooks";
 import { useComedian } from "../Global/Comedian/hooks";
 import { AuthContext } from "../../context";
+import { useCompetition } from "../Global/Competition/hooks";
+import { usePlaylist, useUpdatePlaylist } from "../Global/Playlist/hooks";
+//import { useIsMutating } from "@tanstack/react-query";
+import { toast } from "react-toastify";
+import PlaylistModal from "./PlaylistModal";
 
 const Home = () => {
   const [playList, setPlaylist] = useState([]);
+  const [open, setOpen] = useState();
+  const [formData, setFormData] = useState({});
+  const [errors, setErrors] = useState({});
+  // const loading = useIsMutating();
+
   const { user } = useContext(AuthContext);
   const songs = useSong();
   const event = useEvent();
+  const comp = useCompetition();
   const likedSongs = user?.likedSongs;
 
   const { mutate } = usePlaySong();
@@ -40,6 +52,41 @@ const Home = () => {
   const producer = useProducer();
   const dj = useDJ();
   const comedian = useComedian();
+
+  const playlist = usePlaylist();
+
+  const handleChange = (name, value) => {
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const validationHandler = (name, error) => {
+    setErrors({
+      ...errors,
+      [name]: error,
+    });
+  };
+  const { mutate: add, isSuccess, reset } = useUpdatePlaylist();
+
+  const submitHandler = () => {
+    const data = {
+      id: formData["playlist"],
+      songs: JSON.stringify([formData["id"]]),
+      _sid: "Song",
+    };
+    add(data);
+  };
+  const openHandler = (item) => {
+    setOpen(!open);
+    setFormData({ ...formData, id: item._id });
+  };
+  if (isSuccess) {
+    reset();
+    setOpen(false);
+    setFormData("");
+    toast.success("Added to Playlist", {
+      position: toast.POSITION.BOTTOM_CENTER,
+    });
+  }
   return (
     <Layout>
       <div className="pageContents">
@@ -63,6 +110,7 @@ const Home = () => {
                     play={() => playlistHandler(item)}
                     song={item}
                     liked={likedSongs}
+                    myPlaylist={() => openHandler(item)}
                   />
                 </SwiperSlide>
               ))}
@@ -74,6 +122,7 @@ const Home = () => {
                   song={item}
                   liked={likedSongs}
                   key={i}
+                  myPlaylist={() => openHandler(item)}
                 />
               ))}
             </div>
@@ -207,6 +256,47 @@ const Home = () => {
           {/* end of mobile View */}
         </div>
         {/* End of Comedians*/}
+
+        {/* Competition */}
+        <div className="col">
+          <div className="itemTitle">TOP Comedians</div>
+          <Swiper
+            modules={[Navigation]}
+            slidesPerView={4}
+            className="cardFlex desktop"
+            navigation
+            spaceBetween={15}
+            breakpoints={breakpoints}
+          >
+            {comp?.map((item, i) => (
+              <SwiperSlide key={i}>
+                <CompetitionCard key={i} info={item} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          {/* Mobile view */}
+          <div className="cardFlex mobile">
+            {comp?.map((item, i) => (
+              <CompetitionCard key={i} info={item} />
+            ))}
+          </div>
+        </div>
+
+        {/* End of Competition */}
+
+        {/* add to playlist */}
+        <PlaylistModal
+          setErrors={setErrors}
+          submitHandler={submitHandler}
+          open={open}
+          errors={errors}
+          formData={formData}
+          handleChange={handleChange}
+          validationHandler={validationHandler}
+          playlist={playlist}
+          setOpen={setOpen}
+        />
+        {/* add to playlist */}
       </div>
       <Player playlist={playList} />
     </Layout>

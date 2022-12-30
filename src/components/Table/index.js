@@ -55,7 +55,7 @@ const Table = ({
           position: "row",
 
           onClick: (event, rowData) => {
-            navigate(`${url}/${rowData.id}`);
+            navigate(`${url}/${rowData._id}`);
           },
         },
         setFormData && {
@@ -87,7 +87,7 @@ const Table = ({
               dangerMode: true,
             }).then((willDelete) => {
               if (willDelete) {
-                deleteID ? remove(rowData[deleteID]) : remove(rowData.id);
+                deleteID ? remove(rowData[deleteID]) : remove(rowData._id);
               }
             });
           },

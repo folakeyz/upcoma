@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./styles.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -19,7 +19,7 @@ import "@szhsin/react-menu/dist/transitions/slide.css";
 import ShareButton from "react-web-share-button";
 import { useLikeSong } from "../../../modules/Global/Songs/hooks";
 
-const SongCard = ({ song, play, liked = [] }) => {
+const SongCard = ({ song, play, liked = [], myPlaylist }) => {
   const { mutate } = useLikeSong();
   const likeSongHandler = (id) => {
     mutate(song?._id);
@@ -77,6 +77,10 @@ const SongCard = ({ song, play, liked = [] }) => {
             <MenuItem onClick={play}>
               <FaClipboardList />
               &nbsp;&nbsp;Add to Playlist
+            </MenuItem>
+            <MenuItem onClick={myPlaylist}>
+              <FaClipboardList />
+              &nbsp;&nbsp;Add to My Playlist
             </MenuItem>
             <MenuItem className={styles.menu}>
               <FaShareAlt />

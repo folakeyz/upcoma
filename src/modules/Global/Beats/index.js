@@ -10,7 +10,7 @@ const Beats = () => {
 
   const { mutate } = usePlayBeat();
   const { user } = useContext(AuthContext);
-  const likedSongs = user?.likedSongs;
+  const likedSongs = user?.likedBeats;
 
   const playlistHandler = (audio) => {
     let song = { ...audio, musicSrc: audio.song };

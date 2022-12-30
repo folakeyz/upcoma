@@ -7,6 +7,8 @@ import Layout from "../../../Layout";
 import { useAttendEvent, useEvent } from "./hooks";
 import { usePaystackPayment } from "react-paystack";
 import { Button } from "mtforms";
+import { Table } from "../../../components";
+import { columns } from "./Column";
 
 const SingleEvent = () => {
   const { id } = useParams();
@@ -48,6 +50,7 @@ const SingleEvent = () => {
       break;
     }
   }
+
   return (
     <Layout>
       <div className="pageContents">
@@ -92,6 +95,14 @@ const SingleEvent = () => {
                 />
               )}
             </div>
+            {/* Events */}
+            {single?.user === user?._id && (
+              <div className="col">
+                <div className="modalTitle">Registered Attendees</div>
+                <Table data={single?.attendees} columns={columns} />
+              </div>
+            )}
+            {/* end of Events */}
           </div>
         </div>
       </div>

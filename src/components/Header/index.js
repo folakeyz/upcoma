@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import styles from "./styles.module.css";
 // import logo from "../../assets/images/logo.png";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // import { useDispatch, useSelector } from "react-redux";
 
 //import { userLogout } from "../../redux/actions/authActions";
@@ -10,6 +10,12 @@ import { AiOutlineSearch } from "react-icons/ai";
 import Links from "./Links";
 import ProfileLink from "./Profile";
 import { AuthContext } from "../../context";
+import { useEvent } from "../../modules/Global/Events/hooks";
+import { useBeat } from "../../modules/Global/Beats/hooks";
+import { useCompetition } from "../../modules/Global/Competition/hooks";
+import { useArtist } from "../../modules/Global/Artist/hooks";
+import { useProducer } from "../../modules/Global/Producer/hooks";
+import { useSong } from "../../modules/Global/Songs/hooks";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -19,22 +25,12 @@ const Header = () => {
   const [filtered, setFiltered] = useState([]);
   const [show, setShow] = useState(false);
   const [active, setActive] = useState(0);
-
-  //   const userProfile = useSelector((state) => state.userProfile);
-  //   const { user } = userProfile;
-  //   const getEvents = useSelector((state) => state.getEvents);
-  //   const { event = [] } = getEvents;
-
-  //   const getBeats = useSelector((state) => state.getBeats);
-  //   const { beats = [] } = getBeats;
-  //   const allUsers = useSelector((state) => state.allUsers);
-  //   const { users = [] } = allUsers;
-
-  //   const getComps = useSelector((state) => state.getComps);
-  //   const { competiton = [] } = getComps;
-
-  //   const artist = users.filter((x) => x.role === "Artist");
-  //   const producer = users.filter((x) => x.role === "Producer");
+  const event = useEvent();
+  const beats = useBeat();
+  const competition = useCompetition();
+  const artist = useArtist();
+  const producer = useProducer();
+  const songs = useSong();
 
   const logoutHandler = () => {
     logout();
@@ -51,46 +47,46 @@ const Header = () => {
   const handleChange = (e) => {
     const value = e.target.value;
     var dataFilter = [];
-    // const song = songs.filter((song) => {
-    //   return (
-    //     song.name.toLowerCase().includes(value.toLowerCase()) ||
-    //     song.artist.toLowerCase().includes(value.toLowerCase())
-    //   );
-    // });
-    // song.length > 0 && dataFilter.push(...song);
-    // const artists = artist.filter((x) => {
-    //   return (
-    //     x.firstname.toLowerCase().includes(value.toLowerCase()) ||
-    //     x?.stagename?.toLowerCase().includes(value.toLowerCase())
-    //   );
-    // });
-    // artist.length > 0 && dataFilter.push(...artists);
+    const song = songs.filter((song) => {
+      return (
+        song.name.toLowerCase().includes(value.toLowerCase()) ||
+        song.artist.toLowerCase().includes(value.toLowerCase())
+      );
+    });
+    song.length > 0 && dataFilter.push(...song);
+    const artists = artist.filter((x) => {
+      return (
+        x.firstname.toLowerCase().includes(value.toLowerCase()) ||
+        x?.stagename?.toLowerCase().includes(value.toLowerCase())
+      );
+    });
+    artist.length > 0 && dataFilter.push(...artists);
 
-    // const prod = producer.filter((x) => {
-    //   return (
-    //     x.firstname.toLowerCase().includes(value.toLowerCase()) ||
-    //     x?.stagename?.toLowerCase().includes(value.toLowerCase())
-    //   );
-    // });
-    // prod.length > 0 && dataFilter.push(...prod);
-    // const beat = beats.filter((x) => {
-    //   return (
-    //     x.name.toLowerCase().includes(value.toLowerCase()) ||
-    //     x.producer.toLowerCase().includes(value.toLowerCase())
-    //   );
-    // });
-    // beat.length > 0 && dataFilter.push(...beat);
-    // const comp = competiton.filter((x) => {
-    //   return x.name.toLowerCase().includes(value.toLowerCase());
-    // });
-    // comp.length > 0 && dataFilter.push(...comp);
-    // const evt = event.filter((x) => {
-    //   return x.name.toLowerCase().includes(value.toLowerCase());
-    // });
-    // evt.length > 0 && dataFilter.push(...evt);
-    // setShow(true);
-    // setSearch(value);
-    // setFiltered(dataFilter);
+    const prod = producer.filter((x) => {
+      return (
+        x.firstname.toLowerCase().includes(value.toLowerCase()) ||
+        x?.stagename?.toLowerCase().includes(value.toLowerCase())
+      );
+    });
+    prod.length > 0 && dataFilter.push(...prod);
+    const beat = beats.filter((x) => {
+      return (
+        x.name.toLowerCase().includes(value.toLowerCase()) ||
+        x.producer.toLowerCase().includes(value.toLowerCase())
+      );
+    });
+    beat.length > 0 && dataFilter.push(...beat);
+    const comp = competition.filter((x) => {
+      return x.name.toLowerCase().includes(value.toLowerCase());
+    });
+    comp.length > 0 && dataFilter.push(...comp);
+    const evt = event.filter((x) => {
+      return x.name.toLowerCase().includes(value.toLowerCase());
+    });
+    evt.length > 0 && dataFilter.push(...evt);
+    setShow(true);
+    setSearch(value);
+    setFiltered(dataFilter);
   };
 
   const onClick = (suggestion) => {

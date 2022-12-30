@@ -61,7 +61,7 @@ const Booking = () => {
     setOpen(false);
     setFormData("");
   }
-  console.log(data, "booking");
+
   return (
     <Layout>
       <div className="pageContents">

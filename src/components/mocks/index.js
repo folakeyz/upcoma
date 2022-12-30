@@ -24,5 +24,10 @@ const Options = {
     { value: "DJ", name: "DJ" },
     { value: "Comedian", name: "Comedy" },
   ],
+  services: [
+    { value: "Music Distribution", name: "AMusic Distribution" },
+    { value: "Graphics Design", name: "Graphics Design" },
+    { value: "Music Rating", name: "Music Rating" },
+  ],
 };
 export default Options;

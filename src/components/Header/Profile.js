@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
-import { FaChevronDown } from "react-icons/fa";
+import { FaBell, FaChevronDown, FaFacebookMessenger } from "react-icons/fa";
 import { userRank } from "../Star";
 import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
@@ -11,21 +11,16 @@ import "@szhsin/react-menu/dist/transitions/slide.css";
 const ProfileLink = ({ user, profileHandler, logoutHandler }) => {
   return (
     <div className={styles.profile}>
-      <div className="padding10">
-        <Link to="/app/admin/events/view" className="btn btnOrange btnRadius">
-          Events
-        </Link>
-      </div>
-      {user?.role === "Artist" && (
-        <div className="padding10">
-          <Link
-            to="/app/artiste/songs/upload"
-            className="btn btnWhite btnRadius"
-          >
-            Upload Song
-          </Link>
-        </div>
-      )}
+      {/* <div className=""> */}
+      <Link to="/app/chats" className="btn">
+        <FaFacebookMessenger />
+      </Link>
+      {/* </div> */}
+      {/* <div className=""> */}
+      <Link to="/app/notifications" className="btn">
+        <FaBell />
+      </Link>
+      {/* </div> */}
       <Menu
         menuButton={
           <MenuButton className={styles.flex}>

@@ -22,5 +22,4 @@ const ManageSongs = () => {
     </Layout>
   );
 };
-
 export default ManageSongs;

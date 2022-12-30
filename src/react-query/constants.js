@@ -16,4 +16,11 @@ export const queryKeys = {
   mix: "mix",
   analytics: "analytics",
   genre: "genre",
+  bookings: "bookings",
+  regEvent: "regEvent",
+  competition: "competition",
+  regComp: "regComp",
+  service: "service",
+  stream: "stream",
+  talents: "talents",
 };

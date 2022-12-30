@@ -22,6 +22,33 @@ import {
   MySongs,
   UploadSong,
   ManageSongs,
+  MyBookings,
+  RegisteredEvents,
+  Competition,
+  SingleCompetition,
+  RegisteredCompetitions,
+  MyMixTapes,
+  UploadMixTape,
+  ManageMix,
+  MyBeats,
+  ManageBeats,
+  UploadBeat,
+  MyComedy,
+  UploadComedy,
+  ManageComedy,
+  MyEvents,
+  UploadEvent,
+  ManageEvent,
+  MyCompetitions,
+  UploadCompetition,
+  ManageCompetition,
+  Chats,
+  Notifications,
+  Profile,
+  Services,
+  Trending,
+  TopSongs,
+  TopTalents,
 } from "./modules";
 import Dashbboard from "./modules/Musicians/modules/Global/Dashboard";
 
@@ -46,6 +73,14 @@ function App() {
         <Route path="/app/dj/:id" exact element={<SingleDJ />} />
         <Route path="/app/events" exact element={<Events />} />
         <Route path="/app/event/:id" exact element={<SingleEvent />} />
+        <Route path="/app/competitions" exact element={<Competition />} />
+        <Route
+          path="/app/competition/:id"
+          exact
+          element={<SingleCompetition />}
+        />
+        <Route path="/app/trending" exact element={<Trending />} />
+        <Route path="/app/topsongs" exact element={<TopSongs />} />
       </Routes>
     );
   };
@@ -54,7 +89,10 @@ function App() {
     return (
       <Routes>
         <Route path="/" exact element={<Home />} />
+        <Route path="/app/profile" exact element={<Profile />} />
         <Route path="/app/songs" exact element={<Song />} />
+        <Route path="/app/chats" exact element={<Chats />} />
+        <Route path="/app/notifications" exact element={<Notifications />} />
         <Route path="/app/song/:id" exact element={<SingleSong />} />
         <Route path="/app/profile/:id" exact element={<GlobalProfile />} />
         <Route path="/app/comedy" exact element={<Comedy />} />
@@ -80,6 +118,82 @@ function App() {
           exact
           element={<ManageSongs />}
         />
+        <Route path="/app/musician/bookings" exact element={<MyBookings />} />
+        <Route
+          path="/app/musician/events"
+          exact
+          element={<RegisteredEvents />}
+        />
+        <Route path="/app/competitions" exact element={<Competition />} />
+        <Route
+          path="/app/competition/:id"
+          exact
+          element={<SingleCompetition />}
+        />
+        <Route
+          path="/app/musician/competition"
+          exact
+          element={<RegisteredCompetitions />}
+        />
+        <Route path="/app/musician/mixs" exact element={<MyMixTapes />} />
+        <Route
+          path="/app/musician/mixs/upload"
+          exact
+          element={<UploadMixTape />}
+        />
+        <Route path="/app/musician/mixs/manage" exact element={<ManageMix />} />
+        <Route path="/app/musician/beats" exact element={<MyBeats />} />
+        <Route
+          path="/app/musician/beats/upload"
+          exact
+          element={<UploadBeat />}
+        />
+        <Route
+          path="/app/musician/beats/manage"
+          exact
+          element={<ManageBeats />}
+        />
+        <Route path="/app/musician/comedy" exact element={<MyComedy />} />
+        <Route
+          path="/app/musician/comedy/upload"
+          exact
+          element={<UploadComedy />}
+        />
+        <Route
+          path="/app/musician/comedy/manage"
+          exact
+          element={<ManageComedy />}
+        />
+        <Route path="/app/musician/admin/events" exact element={<MyEvents />} />
+        <Route
+          path="/app/musician/admin/events/upload"
+          exact
+          element={<UploadEvent />}
+        />
+        <Route
+          path="/app/musician/admin/events/manage"
+          exact
+          element={<ManageEvent />}
+        />
+        <Route
+          path="/app/musician/admin/competition"
+          exact
+          element={<MyCompetitions />}
+        />
+        <Route
+          path="/app/musician/admin/competition/upload"
+          exact
+          element={<UploadCompetition />}
+        />
+        <Route
+          path="/app/musician/competition/manage"
+          exact
+          element={<ManageCompetition />}
+        />
+        <Route path="/app/services" exact element={<Services />} />
+        <Route path="/app/trending" exact element={<Trending />} />
+        <Route path="/app/topsongs" exact element={<TopSongs />} />
+        <Route path="/app/toptalents" exact element={<TopTalents />} />
       </Routes>
     );
   };
