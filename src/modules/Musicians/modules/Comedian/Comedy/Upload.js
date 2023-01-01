@@ -56,7 +56,7 @@ const UploadComedy = () => {
     navigate("/app/musician/comedy");
   }
   return (
-    <Layout>
+    <Layout name="Upload Comedy">
       <div className="pageContents">
         <div className="col uploadForm">
           <div className="modalTitle">

@@ -17,7 +17,7 @@ const MyMixTapes = () => {
   };
   const myMix = dj.filter((x) => x?.user?._id === user?._id);
   return (
-    <Layout>
+    <Layout name="My Mixtapes">
       <div className="pageContents">
         <div className="btnContainer right">
           <Link to="/app/musician/mixs/manage" className="btn btnWhite">

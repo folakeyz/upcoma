@@ -60,7 +60,7 @@ const SingleDJ = () => {
   }
 
   return (
-    <Layout>
+    <Layout name="DJ Booth">
       <div className="pageContents">
         <DJJumbotron
           song={singleSong}

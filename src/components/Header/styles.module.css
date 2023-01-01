@@ -136,6 +136,6 @@
     flex: 1;
   }
   .profile {
-    display: none;
+    /* display: none; */
   }
 }

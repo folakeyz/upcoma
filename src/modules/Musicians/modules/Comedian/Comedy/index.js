@@ -17,7 +17,7 @@ const MyComedy = () => {
   };
   const mySongs = song.filter((x) => x?.user?._id === user?._id);
   return (
-    <Layout>
+    <Layout name="My Comedy">
       <div className="pageContents">
         <div className="btnContainer right">
           <Link to="/app/musician/comedy/manage" className="btn btnWhite">

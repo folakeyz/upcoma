@@ -34,7 +34,7 @@ const TopSongs = () => {
   const data = useTrending();
   const songs = data.filter((x) => x._sid === "Song");
   return (
-    <Layout>
+    <Layout name="Top Songs">
       <div className="pageContents">
         <Table data={songs} columns={columns} />
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import styles from "./styles.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -18,6 +18,7 @@ import "@szhsin/react-menu/dist/theme-dark.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
 import ShareButton from "react-web-share-button";
 import { useLikeSong } from "../../../modules/Global/Songs/hooks";
+import { AuthContext } from "../../../context";
 
 const SongCard = ({ song, play, liked = [], myPlaylist }) => {
   const { mutate } = useLikeSong();
@@ -32,6 +33,7 @@ const SongCard = ({ song, play, liked = [], myPlaylist }) => {
     navigate(`/app/song/${song._id}`);
   };
 
+  const { user } = useContext(AuthContext);
   return (
     <div className={styles.card}>
       <div className={styles.img} onClick={redirect}>
@@ -57,13 +59,17 @@ const SongCard = ({ song, play, liked = [], myPlaylist }) => {
           </Link>
         </div>
         <div className={styles.properties}>
-          {like ? (
-            <FaHeart
-              onClick={() => likeSongHandler(song?._id)}
-              color="#5b845a"
-            />
-          ) : (
-            <FaRegHeart onClick={() => likeSongHandler(song?._id)} />
+          {user && (
+            <>
+              {like ? (
+                <FaHeart
+                  onClick={() => likeSongHandler(song?._id)}
+                  color="#5b845a"
+                />
+              ) : (
+                <FaRegHeart onClick={() => likeSongHandler(song?._id)} />
+              )}
+            </>
           )}
           <Menu
             menuButton={
@@ -78,10 +84,12 @@ const SongCard = ({ song, play, liked = [], myPlaylist }) => {
               <FaClipboardList />
               &nbsp;&nbsp;Add to Playlist
             </MenuItem>
-            <MenuItem onClick={myPlaylist}>
-              <FaClipboardList />
-              &nbsp;&nbsp;Add to My Playlist
-            </MenuItem>
+            {user && (
+              <MenuItem onClick={myPlaylist}>
+                <FaClipboardList />
+                &nbsp;&nbsp;Add to My Playlist
+              </MenuItem>
+            )}
             <MenuItem className={styles.menu}>
               <FaShareAlt />
               &nbsp;&nbsp;

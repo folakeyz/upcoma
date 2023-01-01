@@ -1,10 +1,10 @@
 import React from "react";
 import { Banner, Footer, Header, Navigation } from "../components";
 
-const Layout = ({ page, children }) => {
+const Layout = ({ name = "", children }) => {
   return (
     <div className="appContainer">
-      <Navigation />
+      <Navigation name={name} />
       <div className="contentsRight">
         <Header />
         <Banner />

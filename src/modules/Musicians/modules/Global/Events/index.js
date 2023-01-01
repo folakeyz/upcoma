@@ -8,7 +8,7 @@ const RegisteredEvents = () => {
   const data = useRegEvent();
 
   return (
-    <Layout>
+    <Layout name="Registered Events">
       <div className="pageContents">
         <div className="col uploadForm">
           <Table data={data} columns={columns} />

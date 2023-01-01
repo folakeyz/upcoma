@@ -13,7 +13,7 @@ const ManageBeats = () => {
   const mySongs = song.filter((x) => x?.user?._id === user?._id);
   const { mutate } = useDeleteBeat();
   return (
-    <Layout>
+    <Layout name="My Beats">
       <div className="pageContents">
         <div className="col uploadForm">
           <Table data={mySongs} columns={columns} remove={mutate} />

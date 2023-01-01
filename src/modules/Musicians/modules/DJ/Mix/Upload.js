@@ -54,7 +54,7 @@ const UploadMixTape = () => {
     navigate("/app/musician/mixs");
   }
   return (
-    <Layout>
+    <Layout name="Upload Mixtapes">
       <div className="pageContents">
         <div className="col uploadForm">
           <FormGroup

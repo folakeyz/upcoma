@@ -13,7 +13,7 @@ const ManageEvent = () => {
   const mySongs = song.filter((x) => x?.user === user?._id);
   const { mutate } = useDeleteEvent();
   return (
-    <Layout>
+    <Layout name="My Events">
       <div className="pageContents">
         <div className="col uploadForm">
           <Table data={mySongs} columns={columns} remove={mutate} />

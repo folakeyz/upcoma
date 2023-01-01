@@ -44,7 +44,7 @@ const UploadEvent = () => {
     navigate("/app/musician/admin/events");
   }
   return (
-    <Layout>
+    <Layout name="Upload Events">
       <div className="pageContents">
         <div className="col uploadForm">
           <div className="modalTitle">Fill The Form To Create an Event</div>

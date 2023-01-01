@@ -7,12 +7,14 @@ import { getStoredUser } from "../../../../storage";
 const SERVER_ERROR = "There was an error contacting the server.";
 
 async function getPlaylist() {
+  const token = getStoredUser()?.token;
+  if (!token) return [];
   const data = await axiosInstance({
     url: "/playlist/me",
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${getStoredUser().token}`,
+      Authorization: `Bearer ${token}`,
     },
   });
   return data?.data?.data;

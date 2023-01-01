@@ -5,11 +5,11 @@ import styles from "./styles.module.css";
 const Links = () => {
   return (
     <div className={styles.profile}>
-      <div className="padding10">
+      {/* <div className="padding10">
         <Link to="/app/admin/events/view" className="btn btnOrange btnRadius">
           Events
         </Link>
-      </div>
+      </div> */}
       <Link to="/signup" className="btn btnOrange marginRight btnRadius">
         Sign Up
       </Link>

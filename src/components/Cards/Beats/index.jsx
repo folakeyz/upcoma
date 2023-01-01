@@ -64,13 +64,17 @@ const BeatsCard = ({ song, play, liked = [] }) => {
         <div className={styles.properties}>
           {song?.type === "Free" && (
             <>
-              {like ? (
-                <FaHeart
-                  onClick={() => likeSongHandler(song?._id)}
-                  color="#5b845a"
-                />
-              ) : (
-                <FaRegHeart onClick={() => likeSongHandler(song?._id)} />
+              {user && (
+                <>
+                  {like ? (
+                    <FaHeart
+                      onClick={() => likeSongHandler(song?._id)}
+                      color="#5b845a"
+                    />
+                  ) : (
+                    <FaRegHeart onClick={() => likeSongHandler(song?._id)} />
+                  )}
+                </>
               )}
             </>
           )}

@@ -6,9 +6,9 @@ import { columns } from "./Column";
 
 const MyBookings = () => {
   const booking = useMyBooking();
-  console.log(booking, "booking");
+
   return (
-    <Layout>
+    <Layout name="My Bookings">
       <div className="pageContents">
         <div className="col uploadForm">
           <Table data={booking} columns={columns} />

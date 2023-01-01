@@ -5,22 +5,24 @@ import ArtistLink from "./ArtistLink";
 import GlobalLink from "./GlobalLink";
 import DJLink from "./DJLink";
 import ComedianLink from "./ComedianLink";
+import UserLink from "./UserLink";
 
-export const Navigator = ({ role, home }) => {
-  console.log(role, "role");
+export const Navigator = ({ role, name }) => {
   switch (role) {
     case "Label":
-      return <LabelLink />;
+      return <LabelLink name={name} />;
     case "Producer":
-      return <ProducerLink />;
+      return <ProducerLink name={name} />;
     case "Artist":
-      return <ArtistLink />;
+      return <ArtistLink name={name} />;
     case "DJ":
-      return <DJLink />;
+      return <DJLink name={name} />;
     case "Comedian":
-      return <ComedianLink />;
+      return <ComedianLink name={name} />;
+    case "Listener":
+      return <UserLink name={name} />;
     default:
       <></>;
   }
-  return <GlobalLink home={home} />;
+  return <GlobalLink name={name} />;
 };

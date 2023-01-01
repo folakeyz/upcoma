@@ -58,7 +58,7 @@ const Comedy = () => {
     });
   }
   return (
-    <Layout>
+    <Layout name="Comedy">
       <div className="pageContents">
         <div className="cardFlex">
           {comedy?.map((item, i) => (

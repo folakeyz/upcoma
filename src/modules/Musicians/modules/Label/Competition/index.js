@@ -12,7 +12,7 @@ const MyCompetitions = () => {
   const myEvt = evt.filter((x) => x?.host?._id === user?._id);
 
   return (
-    <Layout>
+    <Layout name="My Competition">
       <div className="pageContents">
         <div className="btnContainer right">
           <Link to="/app/musician/competition/manage" className="btn btnWhite">

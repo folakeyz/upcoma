@@ -17,7 +17,7 @@ const MyBeats = () => {
   };
   const myMix = dj.filter((x) => x?.user?._id === user?._id);
   return (
-    <Layout>
+    <Layout name="My Beats">
       <div className="pageContents">
         <div className="btnContainer right">
           <Link to="/app/musician/beats/manage" className="btn btnWhite">

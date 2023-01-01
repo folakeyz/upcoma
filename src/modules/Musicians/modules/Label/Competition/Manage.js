@@ -13,7 +13,7 @@ const ManageCompetition = () => {
   const mySongs = song.filter((x) => x?.user === user?._id);
   const { mutate } = useDeleteComp();
   return (
-    <Layout>
+    <Layout name="My Competition">
       <div className="pageContents">
         <div className="col uploadForm">
           <Table data={mySongs} columns={columns} remove={mutate} />

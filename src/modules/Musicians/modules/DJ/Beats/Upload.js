@@ -57,7 +57,7 @@ const UploadBeat = () => {
     navigate("/app/musician/beats");
   }
   return (
-    <Layout>
+    <Layout name="Upload Beats">
       <div className="pageContents">
         <div className="col uploadForm">
           <FormGroup

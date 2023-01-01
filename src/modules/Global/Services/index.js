@@ -52,7 +52,7 @@ const Services = () => {
     setFormData("");
   }
   return (
-    <Layout>
+    <Layout name="Services">
       <div className="pageContents">
         <div className="col uploadForm">
           <div className="modalTitle">

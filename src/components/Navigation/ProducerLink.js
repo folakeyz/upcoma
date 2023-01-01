@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 import { prodLinks, trendLinks } from "./links";
 
-const ProducerLink = () => {
+const ProducerLink = ({ name }) => {
   return (
     <>
       <div className={styles.links}>
         <ul>
           {prodLinks.map((item, i) => (
-            <li key={i}>
+            <li key={i} className={name === item.name && styles.active}>
               <Link to={item.route}>
                 <item.Icon />
                 {item.name}
@@ -24,7 +24,7 @@ const ProducerLink = () => {
         <p>Charts</p>
         <ul>
           {trendLinks.map((item, i) => (
-            <li key={i}>
+            <li key={i} className={name === item.name && styles.active}>
               <Link to={item.route}>
                 <item.Icon />
                 {item.name}

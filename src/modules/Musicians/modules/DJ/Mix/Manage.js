@@ -13,7 +13,7 @@ const ManageMix = () => {
   const mySongs = song.filter((x) => x?.user?._id === user?._id);
   const { mutate } = useDeleteMix();
   return (
-    <Layout>
+    <Layout name="My Mixtapes">
       <div className="pageContents">
         <div className="col uploadForm">
           <Table data={mySongs} columns={columns} remove={mutate} />

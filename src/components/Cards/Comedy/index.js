@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "../Song/styles.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -18,6 +18,7 @@ import "@szhsin/react-menu/dist/theme-dark.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
 import ShareButton from "react-web-share-button";
 import { useLikeComedy } from "../../../modules/Global/Comedy/hooks";
+import { AuthContext } from "../../../context";
 
 const ComedyCard = ({ song, play, liked = [] }) => {
   //const dispatch = useDispatch();
@@ -33,6 +34,7 @@ const ComedyCard = ({ song, play, liked = [] }) => {
     navigate(`/app/comedy/${song._id}`);
   };
 
+  const { user } = useContext(AuthContext);
   return (
     <div className={styles.card}>
       <div className={styles.img} onClick={redirect}>
@@ -58,14 +60,19 @@ const ComedyCard = ({ song, play, liked = [] }) => {
           </Link>
         </div>
         <div className={styles.properties}>
-          {like ? (
-            <FaHeart
-              onClick={() => likeSongHandler(song?._id)}
-              color="#5b845a"
-            />
-          ) : (
-            <FaRegHeart onClick={() => likeSongHandler(song?._id)} />
+          {user && (
+            <>
+              {like ? (
+                <FaHeart
+                  onClick={() => likeSongHandler(song?._id)}
+                  color="#5b845a"
+                />
+              ) : (
+                <FaRegHeart onClick={() => likeSongHandler(song?._id)} />
+              )}
+            </>
           )}
+
           <Menu
             menuButton={
               <MenuButton className={styles.menu}>

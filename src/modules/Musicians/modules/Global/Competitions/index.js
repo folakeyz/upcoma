@@ -7,7 +7,7 @@ import { useJoinedComp } from "./hooks";
 const RegisteredCompetitions = () => {
   const data = useJoinedComp();
   return (
-    <Layout>
+    <Layout name="Registered Competition">
       <div className="pageContents">
         <Table data={data} columns={columns} url="/app/musician/competition" />
       </div>

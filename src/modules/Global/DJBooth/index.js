@@ -18,7 +18,7 @@ const DJBooth = () => {
   };
 
   return (
-    <Layout>
+    <Layout name="DJ Booth">
       <div className="pageContents">
         <div className="cardFlex">
           {dj?.map((item, i) => (

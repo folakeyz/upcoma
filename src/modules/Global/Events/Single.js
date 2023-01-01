@@ -28,8 +28,8 @@ const SingleEvent = () => {
     reference: new Date().getTime().toString(),
     email: user?.email,
     amount: price,
-    //    publicKey: "pk_test_4a87de5ce838bd89a07091c9ec0e69e7d924713a",
-    publicKey: "pk_test_9d3b9a1a4002d8cd62fe1fb182753a0229b0abf8",
+    publicKey: "pk_test_4a87de5ce838bd89a07091c9ec0e69e7d924713a",
+    // publicKey: "pk_test_9d3b9a1a4002d8cd62fe1fb182753a0229b0abf8",
   };
   const onSuccess = (reference) => {
     const payment = { id: id, ...reference };
@@ -52,7 +52,7 @@ const SingleEvent = () => {
   }
 
   return (
-    <Layout>
+    <Layout name="Events">
       <div className="pageContents">
         <div className="col">
           <div className="eventImage">

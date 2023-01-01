@@ -88,7 +88,7 @@ const Home = () => {
     });
   }
   return (
-    <Layout>
+    <Layout name="Home">
       <div className="pageContents">
         {/* Top Songs */}
         <div className="trending">

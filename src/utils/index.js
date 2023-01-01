@@ -1,4 +1,5 @@
 import jwtDecode from "jwt-decode";
+import { toast } from "react-toastify";
 import { getStoredUser } from "../storage";
 
 export const getDecodedJWT = () => {
@@ -23,4 +24,12 @@ export const isAuthenticated = () => {
   } catch (e) {
     return false;
   }
+};
+
+export const toastOptions = {
+  position: toast.POSITION.BOTTOM_CENTER,
+  autoClose: 8000,
+  draggable: true,
+  theme: "dark",
+  pauseOnHover: true,
 };

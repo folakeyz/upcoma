@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 import { djLinks, trendLinks } from "./links";
 
-const DJLink = () => {
+const DJLink = ({ name }) => {
   return (
     <>
       <div className={styles.links}>
         <ul>
           {djLinks.map((item, i) => (
-            <li key={i}>
+            <li key={i} className={name === item.name && styles.active}>
               <Link to={item.route}>
                 <item.Icon />
                 {item.name}
@@ -24,7 +24,7 @@ const DJLink = () => {
         <p>Charts</p>
         <ul>
           {trendLinks.map((item, i) => (
-            <li key={i}>
+            <li key={i} className={name === item.name && styles.active}>
               <Link to={item.route}>
                 <item.Icon />
                 {item.name}

@@ -6,7 +6,7 @@ import { useCompetition } from "./hooks";
 const Competition = () => {
   const compete = useCompetition();
   return (
-    <Layout>
+    <Layout name="Competitions">
       <div className="pageContents">
         <div className="cardFlex">
           {compete?.map((item, i) => (

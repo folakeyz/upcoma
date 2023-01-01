@@ -2,6 +2,7 @@ import { axiosInstance } from "../../../../axiosInstance";
 import { useQuery } from "@tanstack/react-query";
 import { queryKeys } from "../../../../react-query/constants";
 import { toast } from "react-toastify";
+import { toastOptions } from "../../../../utils";
 
 const SERVER_ERROR = "There was an error contacting the server.";
 
@@ -26,9 +27,7 @@ export function useArtist() {
       const err = error?.response?.data?.error
         ? error?.response?.data?.error
         : SERVER_ERROR;
-      toast.error(err, {
-        position: toast.POSITION.TOP_RIGHT,
-      });
+      toast.error(err, toastOptions);
     },
   });
   return data;

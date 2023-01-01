@@ -1,18 +1,14 @@
 import { axiosInstance } from "../../../../axiosInstance";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { queryKeys } from "../../../../react-query/constants";
+import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "../../../../context";
-import { setStoredUser } from "../../../../storage";
 import { toastOptions } from "../../../../utils";
 
 const SERVER_ERROR = "There was an error contacting the server.";
 
-const userLogin = async (formData) => {
+const userSignup = async (formData) => {
   const data = await axiosInstance({
-    url: "/auth/login",
+    url: "/auth",
     method: "POST",
     data: formData,
     headers: {
@@ -22,18 +18,16 @@ const userLogin = async (formData) => {
   return data;
 };
 
-export function useLogin() {
-  const authCtx = useContext(AuthContext);
+export function useSignup() {
   const navigate = useNavigate();
-  const queryClient = useQueryClient();
   const { mutate, isSuccess, reset } = useMutation({
-    mutationFn: (formData) => userLogin(formData),
+    mutationFn: (formData) => userSignup(formData),
     onSuccess: (data) => {
-      toast.success("Login Successful", toastOptions);
-      setStoredUser(data);
-      authCtx.authenticate(data);
-      queryClient.invalidateQueries([queryKeys.user]);
-      navigate("/");
+      toast.success("Registration Successful", {
+        position: toast.POSITION.BOTTOM_CENTER,
+        delay: 3000,
+      });
+      navigate("/login");
     },
     onError: (error) => {
       const err = error?.response?.data?.error

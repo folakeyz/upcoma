@@ -63,7 +63,7 @@ const Booking = () => {
   }
 
   return (
-    <Layout>
+    <Layout name="Bookings">
       <div className="pageContents">
         <div className="btnContainer">
           <button

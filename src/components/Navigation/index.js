@@ -5,7 +5,8 @@ import logo from "../../assets/images/logo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { ToastContainer } from "react-toastify";
 import { AuthContext } from "../../context";
-const Navigation = ({ home }) => {
+import { Link } from "react-router-dom";
+const Navigation = ({ name }) => {
   const [toggle, setToggle] = useState(false);
   const { user } = useContext(AuthContext);
   return (
@@ -13,7 +14,9 @@ const Navigation = ({ home }) => {
       <ToastContainer />
       <div className={styles.mobileNav}>
         <div className={styles.logo}>
-          <img src={logo} alt="Upcoma Logo" />
+          <Link to="/">
+            <img src={logo} alt="Upcoma Logo" />
+          </Link>
         </div>
         <div className={styles.bars}>
           {toggle ? (
@@ -26,10 +29,12 @@ const Navigation = ({ home }) => {
       <div className={toggle ? styles.mobileNavigation : styles.navigation}>
         {!toggle && (
           <div className={styles.logo}>
-            <img src={logo} alt="Upcoma Logo" />
+            <Link to="/">
+              <img src={logo} alt="Upcoma Logo" />
+            </Link>
           </div>
         )}
-        <Navigator role={user?.role} home={home} />
+        <Navigator role={user?.role} name={name} />
       </div>
     </>
   );

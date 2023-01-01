@@ -1,5 +1,6 @@
 export { default as Login } from "./Auth/Login";
 export { default as Signup } from "./Auth/Signup";
+export { default as ForgotPassword } from "./Auth/ForgotPassword";
 export { default as Home } from "./Home";
 export { default as Song } from "./Global/Songs";
 export { default as SingleSong } from "./Global/Songs/SingleSong";

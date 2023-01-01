@@ -60,7 +60,7 @@ const SingleComedy = () => {
   }
 
   return (
-    <Layout>
+    <Layout name="Comedy">
       <div className="pageContents">
         <SongJumbotron
           song={singleSong}

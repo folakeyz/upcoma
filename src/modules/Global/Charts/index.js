@@ -33,7 +33,7 @@ const Trending = () => {
   ];
   const data = useTrending();
   return (
-    <Layout>
+    <Layout name="Trending">
       <div className="pageContents">
         <div className="col uploadForm">
           <Table columns={columns} data={data} />

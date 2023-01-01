@@ -12,7 +12,7 @@ const MyEvents = () => {
   const myEvt = evt.filter((x) => x?.user === user?._id);
 
   return (
-    <Layout>
+    <Layout name="My Events">
       <div className="pageContents">
         <div className="btnContainer right">
           <Link to="/app/musician/events/manage" className="btn btnWhite">

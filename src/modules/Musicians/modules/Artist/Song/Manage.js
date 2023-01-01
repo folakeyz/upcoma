@@ -13,7 +13,7 @@ const ManageSongs = () => {
   const mySongs = song.filter((x) => x?.user?._id === user?._id);
   const { mutate } = useDeleteSong();
   return (
-    <Layout>
+    <Layout name="My Songs">
       <div className="pageContents">
         <div className="col uploadForm">
           <Table data={mySongs} columns={columns} remove={mutate} />

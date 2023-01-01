@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Input, Button, FormGroup, Select } from "mtforms";
 import logo from "../../../assets/images/logo.png";
 import styles from "../styles.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Options } from "../../../components";
 import { toast, ToastContainer } from "react-toastify";
 import { useIsMutating } from "@tanstack/react-query";
+import { useSignup } from "./hooks";
 
 const Signup = () => {
   const loading = useIsMutating();
-  const navigate = useNavigate();
   const [formData, setFormData] = useState({});
   const [errors, setErrors] = useState({});
 
@@ -23,12 +23,13 @@ const Signup = () => {
       [name]: error,
     });
   };
+  const { mutate } = useSignup();
 
   const loginHandler = () => {
     if (formData["password"] !== formData["confirmPassword"]) {
       return toast.error("Password does not match");
     }
-    // dispatch(userReg(formData));
+    mutate(formData);
   };
 
   return (
@@ -84,6 +85,7 @@ const Signup = () => {
               validationHandler={validationHandler}
               error={errors.role}
               labelClassName="white"
+              className={styles.white}
             />
             <Input
               name="email"

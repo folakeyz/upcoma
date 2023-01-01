@@ -43,7 +43,7 @@ const UploadCompetition = () => {
     navigate("/app/musician/admin/competition");
   }
   return (
-    <Layout>
+    <Layout name="Upload Competitions">
       <div className="pageContents">
         <div className="col uploadForm">
           <div className="modalTitle">

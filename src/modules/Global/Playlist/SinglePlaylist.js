@@ -70,9 +70,9 @@ const SinglePlaylist = () => {
       setPlayList((prev) => [...prev, song]);
     }
   };
-  console.log(single, "single");
+
   return (
-    <Layout>
+    <Layout name="My Playlist">
       <div className="pageContents">
         <div className="btnContainer right">
           <button

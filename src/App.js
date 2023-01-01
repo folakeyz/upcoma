@@ -49,6 +49,7 @@ import {
   Trending,
   TopSongs,
   TopTalents,
+  ForgotPassword,
 } from "./modules";
 import Dashbboard from "./modules/Musicians/modules/Global/Dashboard";
 
@@ -59,6 +60,7 @@ function App() {
         <Route path="/" exact element={<Home />} />
         <Route path="/login" exact element={<Login />} />
         <Route path="/signup" exact element={<Signup />} />
+        <Route path="/forgotPassword" exact element={<ForgotPassword />} />
         <Route path="/app/songs" exact element={<Song />} />
         <Route path="/app/song/:id" exact element={<SingleSong />} />
         <Route path="/app/profile/:id" exact element={<GlobalProfile />} />
@@ -81,6 +83,7 @@ function App() {
         />
         <Route path="/app/trending" exact element={<Trending />} />
         <Route path="/app/topsongs" exact element={<TopSongs />} />
+        <Route path="/app/toptalents" exact element={<TopTalents />} />
       </Routes>
     );
   };

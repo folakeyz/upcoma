@@ -34,7 +34,7 @@ const Playlist = () => {
     setFormData("");
   }
   return (
-    <Layout>
+    <Layout name="My Playlist">
       <div className="pageContents">
         <h3>Create Playlist</h3>
         <div className="btnContainer">

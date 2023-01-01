@@ -19,8 +19,10 @@
   /* flex-direction: column; */
   width: 100%;
   height: 100vh;
-  background: var(--black);
+  background: linear-gradient(30deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("../../assets/images/bg.jpeg");
   color: white;
+  background-size: cover;
 }
 .loginContainer {
   display: flex;
@@ -35,7 +37,7 @@
   width: 50%;
 }
 .loginContainer select option {
-  color: white;
+  color: white !important;
 }
 .loginContainer input {
   color: white;
@@ -54,7 +56,9 @@
   font-size: 13px;
   text-align: right;
 }
-
+.white {
+  color: white;
+}
 /* Media Query */
 
 @media screen and (max-width: 1300px) {

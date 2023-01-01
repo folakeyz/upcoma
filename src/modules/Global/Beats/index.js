@@ -17,9 +17,9 @@ const Beats = () => {
     setPlaylist((prev) => [...prev, song]);
     mutate(audio._id);
   };
-  console.log(beat, "beats");
+
   return (
-    <Layout>
+    <Layout name="Beats">
       <div className="pageContents">
         <div className="cardFlex">
           {beat?.map((item, i) => (

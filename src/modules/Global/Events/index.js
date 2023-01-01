@@ -6,7 +6,7 @@ import { useEvent } from "./hooks";
 const Events = () => {
   const event = useEvent();
   return (
-    <Layout>
+    <Layout name="Events">
       <div className="pageContents">
         <div className="cardFlex">
           {event?.map((item, i) => (

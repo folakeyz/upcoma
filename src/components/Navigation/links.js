@@ -6,7 +6,6 @@ import {
   BsFillBookmarkStarFill,
   BsFillBootstrapFill,
   BsFillEmojiHeartEyesFill,
-  BsFillInfoCircleFill,
   BsMusicNoteBeamed,
   BsMusicPlayer,
   BsMusicPlayerFill,

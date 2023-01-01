@@ -8,7 +8,7 @@ const Dashbboard = () => {
   const data = useAnalytics();
 
   return (
-    <Layout>
+    <Layout name="My Dashboard">
       <div className="pageContents">
         <div className="cardFlex">
           <Card

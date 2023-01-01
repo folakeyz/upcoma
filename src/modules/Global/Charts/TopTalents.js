@@ -34,7 +34,7 @@ const TopTalents = () => {
   ];
   const data = useTalents();
   return (
-    <Layout>
+    <Layout name="Top Talents">
       <div className="pageContents">
         <Table data={data} columns={columns} />
       </div>
