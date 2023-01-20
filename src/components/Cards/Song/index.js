@@ -27,13 +27,22 @@ const SongCard = ({ song, play, liked = [], myPlaylist }) => {
   };
   const navigate = useNavigate();
 
-  var like = liked?.includes(song?._id);
+  // var like = liked?.includes(song?._id);
 
   const redirect = () => {
     navigate(`/app/song/${song._id}`);
   };
 
   const { user } = useContext(AuthContext);
+
+  var like = false;
+  for (var i = 0; i < liked.length; i++) {
+    if (liked[i]._id === song?._id) {
+      like = true;
+      break;
+    }
+  }
+
   return (
     <div className={styles.card}>
       <div className={styles.img} onClick={redirect}>

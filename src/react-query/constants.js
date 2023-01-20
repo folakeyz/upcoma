@@ -23,4 +23,5 @@ export const queryKeys = {
   service: "service",
   stream: "stream",
   talents: "talents",
+  chat: "chat",
 };

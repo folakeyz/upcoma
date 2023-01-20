@@ -3,6 +3,7 @@
 @import url("./shared/home.css");
 @import url("./shared/song.css");
 @import url("./shared/event.css");
+@import url("./shared/chat.css");
 
 * {
   font-family: "Poppins", sans-serif;

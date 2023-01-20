@@ -1,7 +1,7 @@
 const Options = {
   role: [
     { value: "Listener", name: "Listener" },
-    { value: "Artist", name: "Artiste" },
+    { value: "Artist", name: "Artist" },
     { value: "DJ", name: "DJ" },
     { value: "Producer", name: "Producer" },
     { value: "Comedian", name: "Comedy" },

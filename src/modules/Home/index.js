@@ -232,7 +232,7 @@ const Home = () => {
 
         {/* Comedians */}
         <div className="col">
-          <div className="itemTitle">TOP Comedians</div>
+          <div className="itemTitle">TOP COMEDIANS</div>
           <Swiper
             modules={[Navigation]}
             slidesPerView={4}
@@ -259,7 +259,7 @@ const Home = () => {
 
         {/* Competition */}
         <div className="col">
-          <div className="itemTitle">TOP Comedians</div>
+          <div className="itemTitle">TOP COMPETITIONS</div>
           <Swiper
             modules={[Navigation]}
             slidesPerView={4}

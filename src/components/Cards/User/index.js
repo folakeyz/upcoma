@@ -21,7 +21,7 @@ const UserCard = ({ user }) => {
       </div>
       <div className={styles.text}>
         <div className={styles.profile}>
-          <Link to="/">
+          <Link to={`/app/profile/${user?._id}`}>
             {user.stagename ? user?.stagename : user?.firstname}
             {userRank(user?.rank)}
           </Link>

@@ -1,0 +1,157 @@
+.chatContainer {
+  display: flex;
+  justify-content: space-between;
+  height: 40rem;
+}
+.followers {
+  width: 100%;
+  display: flex;
+  flex: 0.25;
+  height: 40rem;
+  overflow-y: auto;
+  flex-direction: column;
+  background: rgba(0, 0, 20, 0.5);
+}
+.followers::-webkit-scrollbar {
+  width: 5px;
+}
+.followers::-webkit-scrollbar-track {
+  background-color: black;
+}
+.followers::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+}
+.msg {
+  width: 100%;
+  display: flex;
+  flex: 0.75;
+  height: 40rem;
+  overflow-y: auto;
+  flex-direction: column;
+  background: linear-gradient(
+      0deg,
+      rgba(34, 38, 44, 0.9),
+      rgba(34, 38, 44, 0.9)
+    ),
+    url("../assets/images/chat.jpeg");
+}
+.chatWelcome {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+.chatWelcome img {
+  object-fit: contain;
+  max-height: 30rem;
+}
+
+.chatMsg {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.chatHeader {
+  display: flex;
+  padding: 1rem 0.5rem;
+  color: white;
+  background: #353b44;
+  align-items: center;
+}
+.chatHeaderPhoto {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 1rem;
+}
+.chatHeaderPhoto img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.chatHeaderName {
+  display: flex;
+  align-items: center;
+}
+.chatHeaderName img {
+  width: 20px;
+  height: 20px;
+}
+
+.chatInput {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  /* position: fixed; */
+  /* top: 100px; */
+}
+aside.EmojiPickerReact.epr-main {
+  position: absolute !important;
+  top: 20rem;
+}
+.chatEmoji {
+  display: flex;
+  flex: 0.05;
+  color: gold;
+}
+.chatEmoji svg {
+  font-size: 1.5rem;
+}
+.chatInputText {
+  display: flex;
+  flex: 0.9;
+  padding: 0 0.5rem;
+  /* position: relative; */
+}
+.chatInputText input {
+  width: 100%;
+  height: 3rem;
+  background: rgba(255, 255, 255, 0.3);
+  outline: none;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+.chatInputButton {
+  display: flex;
+  flex: 0.05;
+}
+
+.chatBtn {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  background: var(--orange);
+  border-radius: 50%;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+}
+.chatBtn svg {
+  font-size: 1.5rem;
+}
+.messages {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  height: 30rem;
+  overflow-y: auto;
+}
+
+.msgContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.chatRight {
+  align-items: flex-end;
+}

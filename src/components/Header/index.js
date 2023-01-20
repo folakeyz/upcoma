@@ -147,7 +147,7 @@ const Header = () => {
         <div className={styles.searchContainer}>
           <input
             type="text"
-            placeholder="Search for Artiste, Music, and more"
+            placeholder="Search for Artist, Music, and more"
             value={search}
             onChange={handleChange}
             onClick={onClick}
