@@ -59,12 +59,14 @@ const SongCard = ({ song, play, liked = [], myPlaylist }) => {
         </div>
         <div className={styles.profile}>
           <Link to={`/app/song/${song?._id}`}>
-            <p>{song?.name}</p>
+            <p>
+              {song?.name.slice(0, 12)} {song?.name.length > 12 && "..."}
+            </p>
           </Link>
 
           <Link to={`/app/profile/${song?.user?._id}`}>
-            {song?.artist.slice(0, 18)}
-            {song?.artist.length > 18 && "..."}
+            {song?.artist.slice(0, 13)}
+            {song?.artist.length > 13 && "..."}
           </Link>
         </div>
         <div className={styles.properties}>

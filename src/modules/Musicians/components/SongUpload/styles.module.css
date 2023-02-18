@@ -15,6 +15,12 @@
   display: inline-block;
 }
 
+.uploadContainer span {
+  font-size: 12px;
+}
+.uploadContainer span a {
+  color: orangered;
+}
 .uploadBtn {
   height: 3.5rem;
   outline: none;

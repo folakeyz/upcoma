@@ -43,6 +43,19 @@ async function likeUser(formData) {
   return data?.data?.data;
 }
 
+async function watchlist(formData) {
+  const data = await axiosInstance({
+    url: `/auth/watchlist/${formData}`,
+    method: "PUT",
+    //data: { id: formData },
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${getStoredUser().token}`,
+    },
+  });
+  return data?.data?.data;
+}
+
 export function useUsers() {
   const fallback = [];
   const { data = fallback } = useQuery({
@@ -65,7 +78,7 @@ export function useFollow() {
   const { mutate } = useMutation({
     mutationFn: (formData) => followUser(formData),
     onSuccess: (data) => {
-      queryClient.invalidateQueries([queryKeys.users]);
+      queryClient.invalidateQueries([queryKeys.user]);
     },
     onError: (error) => {
       const err = error?.response?.data?.error
@@ -84,7 +97,26 @@ export function useLike() {
   const { mutate } = useMutation({
     mutationFn: (formData) => likeUser(formData),
     onSuccess: (data) => {
-      queryClient.invalidateQueries([queryKeys.users]);
+      queryClient.invalidateQueries([queryKeys.user]);
+    },
+    onError: (error) => {
+      const err = error?.response?.data?.error
+        ? error?.response?.data?.error
+        : SERVER_ERROR;
+      toast.error(err, {
+        position: toast.POSITION.BOTTOM_CENTER,
+      });
+    },
+  });
+  return { mutate };
+}
+
+export function useWatchlist() {
+  const queryClient = useQueryClient();
+  const { mutate } = useMutation({
+    mutationFn: (formData) => watchlist(formData),
+    onSuccess: (data) => {
+      queryClient.invalidateQueries([queryKeys.user]);
     },
     onError: (error) => {
       const err = error?.response?.data?.error

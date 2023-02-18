@@ -14,6 +14,7 @@ import {
 } from "react-icons/bs";
 import { FaDrum, FaLayerGroup, FaMusic } from "react-icons/fa";
 import { IoIosRibbon, IoMdRibbon } from "react-icons/io";
+import { GiMedallist } from "react-icons/gi";
 export const artistLinks = [
   { route: "/", name: "Home", Icon: BiHomeAlt },
   { route: "/app/dashboard", name: "My Dashboard", Icon: BsXDiamondFill },
@@ -163,6 +164,7 @@ export const prodLinks = [
     Icon: BsFillBookmarkStarFill,
   },
 
+  { route: "/app/watchlist", name: "My Watchlist", Icon: GiMedallist },
   { route: "/app/comedy", name: "Comedy", Icon: BsFillEmojiHeartEyesFill },
   { route: "/app/beats", name: "Beats", Icon: FaDrum },
   { route: "/app/dj", name: "DJ Booth", Icon: BsMusicPlayer },

@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import { Input, Button, FormGroup } from "mtforms";
 import logo from "../../../assets/images/logo.png";
 import styles from "../styles.module.css";
+import { useNavigate, useParams } from "react-router-dom";
 import { useIsMutating } from "@tanstack/react-query";
-import { useForgotPwd } from "./hooks";
+import { useReset } from "./hooks";
 import { toast, ToastContainer } from "react-toastify";
 import { errorMessage, toastOptions } from "../../../utils";
 
-const ForgotPassword = () => {
+const ResetPassword = () => {
+  const { token } = useParams();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({});
   const [errors, setErrors] = useState({});
   const loading = useIsMutating();
@@ -22,16 +25,26 @@ const ForgotPassword = () => {
       [name]: error,
     });
   };
-  const { mutate, isError, isSuccess, error, reset } = useForgotPwd();
+  const { mutate, isError, isSuccess, error, reset } = useReset();
   const loginHandler = () => {
-    mutate(formData);
+    if (formData["password"] !== formData["confirmPassword"]) {
+      return toast.error("Password does not match", toastOptions);
+    }
+    const data = {
+      token: token,
+      password: formData["password"],
+    };
+    mutate(data);
   };
   if (isSuccess) {
     reset();
     toast.success(
-      "Success, check your email for more information",
+      "Success, Password Reset Successful, you are now been redirected to the login screen",
       toastOptions
     );
+    setTimeout(() => {
+      navigate("/login");
+    }, [3000]);
   }
   if (isError) {
     reset();
@@ -46,7 +59,7 @@ const ForgotPassword = () => {
           </div>
           <div className="center">
             <h4>
-              <b>Enter your Email address to reset your password</b>
+              <b>Enter your New Password</b>
             </h4>
           </div>
           <ToastContainer />
@@ -57,22 +70,31 @@ const ForgotPassword = () => {
             setErrors={setErrors}
           >
             <Input
-              name="email"
-              label="Email Address"
-              type="email"
-              value={formData["email"]}
+              name="password"
+              label="New Password"
+              type="password"
+              value={formData["password"]}
               onChange={handleChange}
-              size="large"
               required={true}
-              reqType="email"
               validationHandler={validationHandler}
-              error={errors.email}
-              className="input"
+              error={errors.password}
+              size="large"
+            />
+            <Input
+              name="confirmPassword"
+              label="Confirm Password"
+              type="password"
+              value={formData["confirmPassword"]}
+              onChange={handleChange}
+              required={true}
+              validationHandler={validationHandler}
+              error={errors.confirmPassword}
+              size="large"
             />
 
             <Button
               type="submit"
-              title="Forgot Password"
+              title="Reset Password"
               size="large"
               loading={loading === 1}
               disabled={loading === 1}
@@ -85,4 +107,4 @@ const ForgotPassword = () => {
   );
 };
 
-export default ForgotPassword;
+export default ResetPassword;

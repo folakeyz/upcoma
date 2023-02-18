@@ -50,6 +50,9 @@ import {
   TopSongs,
   TopTalents,
   ForgotPassword,
+  ResetPassword,
+  EditProfile,
+  MyWatchlist,
 } from "./modules";
 import Dashbboard from "./modules/Musicians/modules/Global/Dashboard";
 
@@ -61,6 +64,7 @@ function App() {
         <Route path="/login" exact element={<Login />} />
         <Route path="/signup" exact element={<Signup />} />
         <Route path="/forgotPassword" exact element={<ForgotPassword />} />
+        <Route path="/resetPassword/:token" exact element={<ResetPassword />} />
         <Route path="/app/songs" exact element={<Song />} />
         <Route path="/app/song/:id" exact element={<SingleSong />} />
         <Route path="/app/profile/:id" exact element={<GlobalProfile />} />
@@ -93,6 +97,7 @@ function App() {
       <Routes>
         <Route path="/" exact element={<Home />} />
         <Route path="/app/profile" exact element={<Profile />} />
+        <Route path="/app/profile/edit" exact element={<EditProfile />} />
         <Route path="/app/songs" exact element={<Song />} />
         <Route path="/app/chats" exact element={<Chats />} />
         <Route path="/app/notifications" exact element={<Notifications />} />
@@ -197,6 +202,7 @@ function App() {
         <Route path="/app/trending" exact element={<Trending />} />
         <Route path="/app/topsongs" exact element={<TopSongs />} />
         <Route path="/app/toptalents" exact element={<TopTalents />} />
+        <Route path="/app/watchlist" exact element={<MyWatchlist />} />
       </Routes>
     );
   };

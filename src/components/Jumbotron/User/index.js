@@ -2,12 +2,13 @@ import React, { useContext } from "react";
 import styles from "./styles.module.css";
 
 import ShareButton from "react-web-share-button";
-import { FaHeart, FaShareAlt, FaUsers } from "react-icons/fa";
+import { FaHeart, FaPlusCircle, FaShareAlt, FaUsers } from "react-icons/fa";
 import { AuthContext } from "../../../context";
 import { Avatar } from "../../Avatar";
 import {
   useFollow,
   useLike,
+  useWatchlist,
 } from "../../../modules/Global/GlobalProfile/hooks";
 
 const UserJumbotron = ({ profile }) => {
@@ -18,13 +19,17 @@ const UserJumbotron = ({ profile }) => {
   };
   var like = profile?.likes?.includes(user?._id);
   var followed = profile?.followers?.includes(user?._id);
+  var listed = profile?.watchlist?.includes(user?._id);
 
   const { mutate: follow } = useFollow();
+  const { mutate: watchlist } = useWatchlist();
   const followUser = () => {
     follow(profile._id);
   };
-
-  console.log(user, "users");
+  const watchlistUser = () => {
+    watchlist(profile._id);
+  };
+  const roles = ["Producer", "Label"];
 
   return (
     <div className={styles.jumbo}>
@@ -72,10 +77,14 @@ const UserJumbotron = ({ profile }) => {
               className={styles.menu}
             />
           </span>
-          {/* <button className="btn action" onClick={play}>
-            <FaPlay />
-            Play Song
-          </button> */}
+          <button
+            className={`btn action ${listed && "btnOrange"}`}
+            onClick={watchlistUser}
+            disabled={!roles?.includes(user?.role)}
+          >
+            <FaPlusCircle />
+            {listed ? "Remove from Watchlist" : "Add to Watchlist"}
+          </button>
         </div>
       </div>
     </div>

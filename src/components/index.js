@@ -24,3 +24,4 @@ export { default as List } from "./List";
 export { default as ListTitle } from "./List/ListTitle";
 export { default as Modal } from "./Modal";
 export { default as Table } from "./Table";
+export { default as Text } from "./Text";

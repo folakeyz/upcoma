@@ -1,10 +1,10 @@
 import { axiosInstance } from "../../../../axiosInstance";
 import { useMutation } from "@tanstack/react-query";
 
-const userForgot = async (formData) => {
+const userReset = async (formData) => {
   const data = await axiosInstance({
-    url: "/auth/forgotPassword",
-    method: "POST",
+    url: `/auth/resetpassword/${formData["token"]}`,
+    method: "PUT",
     data: formData,
     headers: {
       "Content-Type": "application/json",
@@ -13,9 +13,9 @@ const userForgot = async (formData) => {
   return data;
 };
 
-export function useForgotPwd() {
+export function useReset() {
   const { mutate, isSuccess, reset, error, isError } = useMutation({
-    mutationFn: (formData) => userForgot(formData),
+    mutationFn: (formData) => userReset(formData),
   });
   return { mutate, isSuccess, reset, error, isError };
 }

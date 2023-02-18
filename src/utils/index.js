@@ -1,7 +1,7 @@
 import jwtDecode from "jwt-decode";
 import { toast } from "react-toastify";
 import { getStoredUser } from "../storage";
-
+const SERVER_ERROR = "There was an error contacting the server.";
 export const getDecodedJWT = () => {
   try {
     const token = getStoredUser().token;
@@ -32,4 +32,11 @@ export const toastOptions = {
   draggable: true,
   theme: "dark",
   pauseOnHover: true,
+};
+
+export const errorMessage = (error) => {
+  const err = error?.response?.data?.error
+    ? error?.response?.data?.error
+    : SERVER_ERROR;
+  return err;
 };

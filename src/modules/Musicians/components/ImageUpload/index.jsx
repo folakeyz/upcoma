@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../SongUpload/styles.module.css";
 import { BsFillImageFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const ImageUpload = ({
   onChange,
@@ -28,6 +29,10 @@ const ImageUpload = ({
           disabled={loading}
         />
       </div>
+      <span>
+        Don't Have a Cover?{" "}
+        <Link to="/app/services">Request for a Cover Here</Link>
+      </span>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 export { default as Login } from "./Auth/Login";
 export { default as Signup } from "./Auth/Signup";
 export { default as ForgotPassword } from "./Auth/ForgotPassword";
+export { default as ResetPassword } from "./Auth/ResetPassword";
 export { default as Home } from "./Home";
 export { default as Song } from "./Global/Songs";
 export { default as SingleSong } from "./Global/Songs/SingleSong";
@@ -21,6 +22,7 @@ export { default as SingleCompetition } from "./Global/Competition/Single";
 export { default as Chats } from "./Global/Chats";
 export { default as Notifications } from "./Global/Notifications";
 export { default as Profile } from "./Global/Profile";
+export { default as EditProfile } from "./Global/Profile/Edit";
 export { default as Services } from "./Global/Services";
 export { default as Trending } from "./Global/Charts";
 export { default as TopSongs } from "./Global/Charts/TopSongs";
@@ -46,6 +48,7 @@ export { default as ManageComedy } from "./Musicians/modules/Comedian/Comedy/Man
 export { default as MyEvents } from "./Musicians/modules/Producer/Events/";
 export { default as UploadEvent } from "./Musicians/modules/Producer/Events/Upload";
 export { default as ManageEvent } from "./Musicians/modules/Producer/Events/Manage";
+export { default as MyWatchlist } from "./Musicians/modules/Producer/Watchlist";
 export { default as MyCompetitions } from "./Musicians/modules/Label/Competition";
 export { default as UploadCompetition } from "./Musicians/modules/Label/Competition/Upload";
 export { default as ManageCompetition } from "./Musicians/modules/Label/Competition/Manage";

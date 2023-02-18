@@ -16,16 +16,17 @@ import {
 import { useTrends } from "./hooks";
 import { breakpoints } from "./Breakpoints";
 import { useEvent } from "../Global/Events/hooks";
-import { useArtist } from "../Global/Artist/hooks";
-import { useProducer } from "../Global/Producer/hooks";
-import { useDJ } from "../Global/DJ/hooks";
-import { useComedian } from "../Global/Comedian/hooks";
+// import { useArtist } from "../Global/Artist/hooks";
+// import { useProducer } from "../Global/Producer/hooks";
+// import { useDJ } from "../Global/DJ/hooks";
+// import { useComedian } from "../Global/Comedian/hooks";
 import { AuthContext } from "../../context";
 import { useCompetition } from "../Global/Competition/hooks";
 import { usePlaylist, useUpdatePlaylist } from "../Global/Playlist/hooks";
 //import { useIsMutating } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import PlaylistModal from "./PlaylistModal";
+import { useTalents } from "../Global/Charts/hooks";
 
 const Home = () => {
   const [playList, setPlaylist] = useState([]);
@@ -48,10 +49,16 @@ const Home = () => {
     mutate(audio._id);
   };
   const trends = useTrends();
-  const artist = useArtist();
-  const producer = useProducer();
-  const dj = useDJ();
-  const comedian = useComedian();
+  // const artist = useArtist();
+  // const producer = useProducer();
+  // const dj = useDJ();
+  // const comedian = useComedian();
+  const talent = useTalents();
+
+  const artist = talent.filter((x) => x.role === "Artist");
+  const producer = talent.filter((x) => x.role === "Producer");
+  const dj = talent.filter((x) => x.role === "DJ");
+  const comedian = talent.filter((x) => x.role === "Comedian");
 
   const playlist = usePlaylist();
 
