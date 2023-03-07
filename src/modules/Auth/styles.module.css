@@ -59,6 +59,16 @@
 .white {
   color: white;
 }
+.loginContainer select {
+  background: linear-gradient(30deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("../../assets/images/bg.jpeg");
+  color: white;
+}
+.loginContainer select option {
+  background: linear-gradient(30deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("../../assets/images/bg.jpeg");
+  color: white;
+}
 /* Media Query */
 
 @media screen and (max-width: 1300px) {

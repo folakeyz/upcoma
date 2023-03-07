@@ -85,7 +85,7 @@ const Signup = () => {
               validationHandler={validationHandler}
               error={errors.role}
               labelClassName="white"
-              className={styles.white}
+              className={styles.selectBG}
             />
             <Input
               name="email"

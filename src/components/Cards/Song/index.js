@@ -112,8 +112,10 @@ const SongCard = ({ song, play, liked = [], myPlaylist }) => {
               />
             </MenuItem>
             <MenuItem>
-              <FaDownload />
-              &nbsp;&nbsp;Download
+              <a href={song?.song} download>
+                <FaDownload />
+                &nbsp;&nbsp;Download
+              </a>
             </MenuItem>
           </Menu>
         </div>

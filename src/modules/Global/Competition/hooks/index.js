@@ -33,7 +33,7 @@ async function joinCompetition(formData) {
 export function useCompetition() {
   const fallback = [];
   const { data = fallback } = useQuery({
-    queryKey: [queryKeys.event],
+    queryKey: [queryKeys.competition],
     queryFn: () => getCompetitions(),
     onError: (error) => {
       const err = error?.response?.data?.error

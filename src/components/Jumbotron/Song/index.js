@@ -12,8 +12,15 @@ const SongJumbotron = ({ song, play, liked }) => {
   const likeSongHandler = () => {
     mutate(song._id);
   };
-  var like = liked?.includes(song?._id);
-
+  // var like = liked?.includes(song?._id);
+  var like = false;
+  for (var i = 0; i < liked?.length; i++) {
+    if (liked?.[i]?._id === song?._id) {
+      like = true;
+      break;
+    }
+  }
+  console.log(like, song?._id);
   return (
     <div className={styles.jumbo}>
       <div className={styles.profile}>

@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { AuthContext } from "../../../context";
 import Layout from "../../../Layout";
 import { useCompetition, useJoinCompetition } from "./hooks";
-import { usePaystackPayment } from "react-paystack";
+// import { usePaystackPayment } from "react-paystack";
 import { Button } from "mtforms";
 import { Table } from "../../../components";
 import { columns } from "./Columns";
@@ -19,24 +19,24 @@ const SingleCompetition = () => {
 
   const { mutate } = useJoinCompetition();
 
-  const price = single?.cost * 100 || 0;
-  const config = {
-    reference: new Date().getTime().toString(),
-    email: user?.email,
-    amount: price,
-    publicKey: "pk_test_4a87de5ce838bd89a07091c9ec0e69e7d924713a",
-    // publicKey: "pk_test_9d3b9a1a4002d8cd62fe1fb182753a0229b0abf8",
-  };
-  const onSuccess = (reference) => {
-    const payment = { id: id, ...reference };
-    mutate(payment);
-  };
+  // const price = single?.cost * 100 || 0;
+  // const config = {
+  //   reference: new Date().getTime().toString(),
+  //   email: user?.email,
+  //   amount: price,
+  //   publicKey: "pk_test_4a87de5ce838bd89a07091c9ec0e69e7d924713a",
+  //   // publicKey: "pk_test_9d3b9a1a4002d8cd62fe1fb182753a0229b0abf8",
+  // };
+  // const onSuccess = (reference) => {
+  //   const payment = { id: id, ...reference };
+  //   mutate(payment);
+  // };
 
-  const onClose = () => {
-    console.log("closed");
-  };
+  // const onClose = () => {
+  //   console.log("closed");
+  // };
 
-  const initializePayment = usePaystackPayment(config);
+  // const initializePayment = usePaystackPayment(config);
 
   const reg = single?.competitors;
   var registered = false;
@@ -46,6 +46,9 @@ const SingleCompetition = () => {
       break;
     }
   }
+  const register = () => {
+    mutate("");
+  };
 
   return (
     <Layout name="Competitions">
@@ -83,7 +86,7 @@ const SingleCompetition = () => {
                 <Button
                   type="button"
                   className="btn action"
-                  onClick={() => initializePayment(onSuccess, onClose)}
+                  onClick={register}
                   loading={loading === 1}
                   title=" Register for this Competition"
                   size="small"

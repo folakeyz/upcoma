@@ -10,7 +10,7 @@ const MyCompetitions = () => {
   const { user } = useContext(AuthContext);
 
   const myEvt = evt.filter((x) => x?.host?._id === user?._id);
-
+  console.log(evt, "evt");
   return (
     <Layout name="My Competition">
       <div className="pageContents">

@@ -131,14 +131,12 @@
     flex-wrap: wrap;
   }
 
-
-
-  
   .card-3 {
     flex: 1;
   }
   .card-1 {
     padding: 0.5rem;
+    min-height: 20rem;
   }
   .trending {
     flex-direction: column;
@@ -163,6 +161,7 @@
   }
   .card-1 {
     padding: 0.5rem;
+    min-height: 20rem;
   }
   .trending {
     flex-direction: column;
@@ -187,6 +186,7 @@
   }
   .card-1 {
     padding: 0.5rem;
+    min-height: 20rem;
   }
   .trending {
     flex-direction: column;

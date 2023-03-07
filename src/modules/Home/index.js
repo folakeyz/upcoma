@@ -123,15 +123,28 @@ const Home = () => {
               ))}
             </Swiper>
             <div className="cardFlex mobile">
-              {songs?.map((item, i) => (
-                <SongCard
-                  play={() => playlistHandler(item)}
-                  song={item}
-                  liked={likedSongs}
-                  key={i}
-                  myPlaylist={() => openHandler(item)}
-                />
-              ))}
+              <Swiper
+                modules={[Navigation]}
+                slidesPerView={1}
+                className="cardFlex mobile"
+                navigation
+                spaceBetween={1}
+                breakpoints={breakpoints}
+                observer
+                observeParents
+                parallax
+              >
+                {songs?.map((item, i) => (
+                  <SwiperSlide key={i}>
+                    <SongCard
+                      play={() => playlistHandler(item)}
+                      song={item}
+                      liked={likedSongs}
+                      myPlaylist={() => openHandler(item)}
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           </div>
           <div className="card-1">
@@ -158,7 +171,7 @@ const Home = () => {
 
         {/* Artist */}
         <div className="col">
-          <div className="itemTitle">TOP ARTISTES</div>
+          <div className="itemTitle">TOP ARTISTS</div>
           <Swiper
             modules={[Navigation]}
             slidesPerView={4}
@@ -175,9 +188,20 @@ const Home = () => {
           </Swiper>
           {/* mobile view */}
           <div className="cardFlex mobile">
-            {artist?.map((item, i) => (
-              <UserCard key={i} user={item} />
-            ))}
+            <Swiper
+              modules={[Navigation]}
+              slidesPerView={1}
+              className="cardFlex mobile"
+              navigation
+              spaceBetween={3}
+              breakpoints={breakpoints}
+            >
+              {artist?.map((item, i) => (
+                <SwiperSlide key={i}>
+                  <UserCard user={item} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
           {/* end of mobile View */}
         </div>
@@ -202,9 +226,20 @@ const Home = () => {
           </Swiper>
           {/* mobile view */}
           <div className="cardFlex mobile">
-            {producer?.map((item, i) => (
-              <UserCard key={i} user={item} />
-            ))}
+            <Swiper
+              modules={[Navigation]}
+              slidesPerView={1}
+              className="cardFlex mobile"
+              navigation
+              spaceBetween={3}
+              breakpoints={breakpoints}
+            >
+              {producer?.map((item, i) => (
+                <SwiperSlide key={i}>
+                  <UserCard user={item} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
           {/* end of mobile View */}
         </div>
@@ -229,9 +264,20 @@ const Home = () => {
           </Swiper>
           {/* mobile view */}
           <div className="cardFlex mobile">
-            {dj?.map((item, i) => (
-              <UserCard key={i} user={item} />
-            ))}
+            <Swiper
+              modules={[Navigation]}
+              slidesPerView={1}
+              className="cardFlex mobile"
+              navigation
+              spaceBetween={3}
+              breakpoints={breakpoints}
+            >
+              {dj?.map((item, i) => (
+                <SwiperSlide key={i}>
+                  <UserCard user={item} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
           {/* end of mobile View */}
         </div>
@@ -256,9 +302,20 @@ const Home = () => {
           </Swiper>
           {/* mobile view */}
           <div className="cardFlex mobile">
-            {comedian?.map((item, i) => (
-              <UserCard key={i} user={item} />
-            ))}
+            <Swiper
+              modules={[Navigation]}
+              slidesPerView={1}
+              className="cardFlex mobile"
+              navigation
+              spaceBetween={3}
+              breakpoints={breakpoints}
+            >
+              {comedian?.map((item, i) => (
+                <SwiperSlide key={i}>
+                  <UserCard user={item} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
           {/* end of mobile View */}
         </div>
@@ -283,9 +340,20 @@ const Home = () => {
           </Swiper>
           {/* Mobile view */}
           <div className="cardFlex mobile">
-            {comp?.map((item, i) => (
-              <CompetitionCard key={i} info={item} />
-            ))}
+            <Swiper
+              modules={[Navigation]}
+              slidesPerView={1}
+              className="cardFlex mobile"
+              navigation
+              spaceBetween={3}
+              breakpoints={breakpoints}
+            >
+              {comp?.map((item, i) => (
+                <SwiperSlide key={i}>
+                  <CompetitionCard key={i} info={item} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
 

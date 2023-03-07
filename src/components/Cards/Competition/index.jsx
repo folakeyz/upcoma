@@ -27,7 +27,7 @@ const CompetitionCard = ({ info }) => {
         <h4>{info?.name}</h4>
         <p>Entry Fee: ${info?.cost}</p>
         <p>Deadline: {info?.deadline}</p>
-        <p>Closing Date: {info?.date}</p>
+        <p>Competition Date: {info?.date}</p>
       </div>
     </Link>
   );

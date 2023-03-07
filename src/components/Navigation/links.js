@@ -163,7 +163,14 @@ export const prodLinks = [
     name: "My Bookings",
     Icon: BsFillBookmarkStarFill,
   },
-
+  { route: "/app/musician/beats", name: "My Beats", Icon: BsMusicPlayerFill },
+  { route: "/app/musician/beats/upload", name: "Upload Beats", Icon: BsUpload },
+  { route: "/app/musician/mixs", name: "My Mixtapes", Icon: BsMusicPlayerFill },
+  {
+    route: "/app/musician/mixs/upload",
+    name: "Upload Mixtapes",
+    Icon: BsUpload,
+  },
   { route: "/app/watchlist", name: "My Watchlist", Icon: GiMedallist },
   { route: "/app/comedy", name: "Comedy", Icon: BsFillEmojiHeartEyesFill },
   { route: "/app/beats", name: "Beats", Icon: FaDrum },

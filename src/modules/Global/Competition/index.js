@@ -5,6 +5,7 @@ import { useCompetition } from "./hooks";
 
 const Competition = () => {
   const compete = useCompetition();
+
   return (
     <Layout name="Competitions">
       <div className="pageContents">
