@@ -55,8 +55,8 @@ const ComedyCard = ({ song, play, liked = [] }) => {
           </Link>
 
           <Link to={`/app/profile/${song?.user?._id}`}>
-            {song?.user?.stagename.slice(0, 18)}
-            {song?.user?.stagename.length > 18 && "..."}
+            {song?.user?.stagename?.slice(0, 18)}
+            {song?.user?.stagename?.length > 18 && "..."}
           </Link>
         </div>
         <div className={styles.properties}>

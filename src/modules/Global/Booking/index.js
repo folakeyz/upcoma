@@ -30,7 +30,9 @@ const Booking = () => {
 
   const talentHandler = (name, value) => {
     setFormData({ ...formData, [name]: value });
-    const selected = users.filter((x) => x.role === value);
+    const selected = users.filter(
+      (x) => x.role === value && x.stagename !== undefined
+    );
     setTalents(selected);
   };
 
@@ -65,6 +67,7 @@ const Booking = () => {
   return (
     <Layout name="Bookings">
       <div className="pageContents">
+        <br />
         <div className="btnContainer">
           <button
             type="button"

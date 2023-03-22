@@ -73,17 +73,21 @@ const BeatJumbotron = ({ song, play, liked, payment }) => {
               className={styles.menu}
             />
           </span>
+          <button className="btn action" onClick={play}>
+            <FaPlay />
+            Play
+          </button>
           {song?.type === "Free" && (
-            <button className="btn action" onClick={play}>
+            <a href={song?.song} className="btn btnOrange" download>
               <FaPlay />
-              Play
-            </button>
+              Download
+            </a>
           )}
           {purchased && (
-            <button className="btn action" onClick={play}>
+            <a href={song?.song} className="btn btnOrange" download>
               <FaPlay />
-              Play
-            </button>
+              Download
+            </a>
           )}
           {song?.type === "Paid" && !purchased && (
             <button className="btn action" onClick={payment}>

@@ -93,11 +93,20 @@ const Signup = () => {
               type="email"
               value={formData["email"]}
               onChange={handleChange}
-              size="large"
               required={true}
               reqType="email"
               validationHandler={validationHandler}
               error={errors.email}
+            />
+            <Input
+              name="mobile"
+              label="Mobile Number"
+              value={formData["mobile"]}
+              onChange={handleChange}
+              required={true}
+              type="number"
+              validationHandler={validationHandler}
+              error={errors.mobile}
             />
             <Input
               name="password"

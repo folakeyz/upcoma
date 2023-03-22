@@ -117,10 +117,12 @@ const BeatsCard = ({ song, play, liked = [] }) => {
               </MenuItem>
             )}
             {song?.type === "Free" && (
-              <MenuItem>
-                <FaDownload />
-                &nbsp;&nbsp;Download
-              </MenuItem>
+              <a href={song?.song} download>
+                <MenuItem>
+                  <FaDownload />
+                  &nbsp;&nbsp;Download
+                </MenuItem>
+              </a>
             )}
           </Menu>
         </div>

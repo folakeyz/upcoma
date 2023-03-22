@@ -18,7 +18,7 @@ const UserJumbotron = ({ profile }) => {
     mutate(profile._id);
   };
   var like = profile?.likes?.includes(user?._id);
-  var followed = profile?.followers?.includes(user?._id);
+  // var followed = profile?.followers?.includes(user?._id);
   var listed = profile?.watchlist?.includes(user?._id);
 
   const { mutate: follow } = useFollow();
@@ -30,6 +30,14 @@ const UserJumbotron = ({ profile }) => {
     watchlist(profile._id);
   };
   const roles = ["Producer", "Label"];
+
+  var followed = false;
+  for (var i = 0; i < profile?.followers.length; i++) {
+    if (profile?.followers?.[i]._id === user?._id) {
+      followed = true;
+      break;
+    }
+  }
 
   return (
     <div className={styles.jumbo}>
