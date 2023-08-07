@@ -1,0 +1,31 @@
+.comment {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.photo {
+  display: flex;
+  flex: 0.1;
+  overflow: hidden;
+  margin-right: 1rem;
+}
+.photo img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.text {
+  display: flex;
+  flex: 0.9;
+  flex-direction: column;
+}
+.userComment {
+  display: flex;
+  flex-direction: column;
+}

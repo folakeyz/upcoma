@@ -1,0 +1,252 @@
+.navigation {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex: 0.13;
+    flex-direction: column;
+    padding: 0.5rem;
+    border-radius: 0px;
+    background: var(--black);
+    border-right: 1px solid rgba(200, 200, 200, 0.3);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+    overflow-y: auto;
+}
+
+.navigation::-webkit-scrollbar {
+    width: 5px;
+}
+
+.navigation::-webkit-scrollbar-track {
+    background-color: black;
+}
+
+.navigation::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+.logo {
+    display: flex;
+    max-height: 5rem;
+    padding: 0.5rem;
+    /* justify-content: center; */
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.logo img {
+    width: 60%;
+    object-fit: contain;
+    max-height: 4rem;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+}
+
+.links ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    width: 100%;
+    flex-direction: column;
+}
+
+.links ul li {
+    display: flex;
+    list-style: none;
+    justify-content: flex-start;
+    height: 3rem;
+    cursor: pointer;
+    padding: 0 1rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.links ul li a {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    text-decoration: none;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+}
+
+.links ul li a svg {
+    margin-right: 0.5rem;
+}
+
+.links p {
+    color: white;
+}
+
+.links ul li:hover {
+    background: linear-gradient(to right top, #000, #1f2024, #19191a);
+}
+
+.active {
+    background: var(--orange);
+    border-radius: 20px;
+}
+
+/* end of mobile component */
+.mobileNav {
+    display: none;
+    justify-content: space-between;
+    background: #000;
+    max-height: 5rem;
+    padding: 0.5rem 1rem;
+    align-items: center;
+    color: white;
+}
+
+.bars {
+    font-size: 1.5rem;
+}
+
+.mobileNavigation {
+    display: flex;
+    background: black;
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* mobile component */
+
+/* Media Query */
+
+@media screen and (min-width: 1300px) and (max-width: 1600px) {
+    .navigation {
+        display: flex;
+        flex: 0.15;
+    }
+
+    .logo img {
+        width: 50%;
+        object-fit: contain;
+        max-height: 4rem;
+    }
+
+    .mobileNav {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .navigation {
+        display: flex;
+        flex: 0.17;
+    }
+
+    .logo img {
+        width: 50%;
+        object-fit: contain;
+        max-height: 4rem;
+    }
+
+    .mobileNav {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1050px) and (max-width: 1300px) {
+    .navigation {
+        display: flex;
+        flex: 0.18;
+    }
+
+    .logo img {
+        width: 50%;
+        object-fit: contain;
+        max-height: 4rem;
+    }
+
+    .mobileNav {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .navigation {
+        display: none;
+    }
+
+    .logo img {
+        width: 50%;
+        object-fit: contain;
+        max-height: 4rem;
+    }
+
+    .mobileNav {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .navigation {
+        display: none;
+    }
+
+    .logo img {
+        width: 50%;
+        object-fit: contain;
+        max-height: 4rem;
+    }
+
+    .mobileNav {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1050px) {
+    .navigation {
+        display: none;
+    }
+
+    .logo img {
+        width: 50%;
+        object-fit: contain;
+        max-height: 4rem;
+    }
+
+    .mobileNav {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .navigation {
+        display: none;
+    }
+
+    .logo img {
+        width: 50%;
+        object-fit: contain;
+        max-height: 4rem;
+    }
+
+    .mobileNav {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .navigation {
+        display: none;
+    }
+
+    .logo img {
+        width: 50%;
+        object-fit: contain;
+        max-height: 4rem;
+    }
+
+    .mobileNav {
+        display: flex;
+    }
+}
