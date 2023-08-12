@@ -27,7 +27,14 @@ import {
 } from "./User/playlist";
 import { useTalents, useTrends } from "./User/chart";
 import { useUpdateProfile, useUploadPhoto } from "./User/profile";
-import { useGenres } from "./Admin/genres";
+import { useGenres, useUploadSong, useDeleteSong } from "./Admin/genres";
+import { useUploadComedy, useDeleteComedy } from "./Admin/comedy";
+import { useUploadBeat, useDeleteBeat } from "./Admin/beats";
+import { useDeleteMix, useUploadMix } from "./Admin/mix";
+import { useMyBooking as useAdminBooking } from "./Admin/booking";
+import { useJoinedComp } from "./Admin/comp";
+import { useAnalytics } from "./Admin/dashboard";
+import { useRegEvent } from "./Admin/events";
 import {
   useLikeMix,
   usePlayMix,
@@ -77,4 +84,16 @@ export const hooks = {
   useMyBooking,
   useUsers,
   useTrending,
+  useUploadSong,
+  useDeleteSong,
+  useUploadComedy,
+  useDeleteComedy,
+  useUploadBeat,
+  useDeleteBeat,
+  useUploadMix,
+  useDeleteMix,
+  useAdminBooking,
+  useJoinedComp,
+  useAnalytics,
+  useRegEvent,
 };
