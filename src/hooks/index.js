@@ -1,4 +1,4 @@
-import { useEvent } from "./User/events";
+import { useEvent, useAttendEvent } from "./User/events";
 import { useBeat } from "./User/beats";
 import { useCompetition } from "./User/competition";
 import { useArtist } from "./User/artist";
@@ -10,7 +10,11 @@ import {
   usePostComment,
 } from "./User/songs";
 import { useLikeComedy } from "./User/comedy";
-import { usePlaylist, useUpdatePlaylist } from "./User/playlist";
+import {
+  usePlaylist,
+  useUpdatePlaylist,
+  useCreatePlaylist,
+} from "./User/playlist";
 import { useTalents, useTrends } from "./User/chart";
 import { useUpdateProfile, useUploadPhoto } from "./User/profile";
 import { useGenres } from "./Admin/genres";
@@ -41,4 +45,6 @@ export const hooks = {
   useLike,
   useWatchlist,
   useUploadService,
+  useCreatePlaylist,
+  useAttendEvent,
 };

@@ -8,6 +8,7 @@
   cursor: pointer;
   transition: 2s ease-in-out;
   background: whitesmoke;
+  color: black !important;
 }
 .photo {
   display: flex;

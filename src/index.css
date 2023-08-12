@@ -64,6 +64,9 @@ a {
 .colorYellow {
   color: yellow;
 }
+.textBlack {
+  color: #000000;
+}
 
 /* Media Query */
 

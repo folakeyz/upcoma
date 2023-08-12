@@ -15,7 +15,7 @@
     "echarts": "^5.4.3",
     "echarts-for-react": "^3.0.2",
     "jwt-decode": "^3.1.2",
-    "mtforms": "^1.2.5",
+    "mtforms": "1.2.7",
     "react": "^18.2.0",
     "react-audio-player": "^0.17.0",
     "react-dom": "^18.2.0",
