@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Player, SongCard } from "../../../components";
 import { AuthContext } from "../../../context";
 import Layout from "../../../layout";
@@ -6,11 +6,16 @@ import { hooks } from "../../../hooks";
 import { toast } from "react-toastify";
 import PlaylistModal from "../../Home/PlaylistModal";
 import { Input, Select } from "mtforms";
-import styles from '../Profile/styles.module.css'
+import styles from "../Profile/styles.module.css";
 const Songs = () => {
   const [playList, setPlaylist] = useState([]);
   const [open, setOpen] = useState();
   const [formData, setFormData] = useState({});
+  const [songData, setSongData] = useState({
+    name: "",
+    artistName: "",
+    genre: "",
+  });
   const [errors, setErrors] = useState({});
   const song = hooks.useSong();
   const { mutate } = hooks.usePlaySong();
@@ -27,6 +32,10 @@ const Songs = () => {
 
   const handleChange = (name, value) => {
     setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSongChange = (name, value) => {
+    setSongData({ ...songData, [name]: value });
   };
 
   const validationHandler = (name, error) => {
@@ -57,41 +66,64 @@ const Songs = () => {
       position: toast.POSITION.BOTTOM_CENTER,
     });
   }
-  const genre = hooks.useGenres()
+  const genre = hooks.useGenres();
+
+  const [filteredSongs, setFilteredSongs] = useState([]);
+
+  // Call filterSongs whenever form data changes
+  useEffect(() => {
+    const filterSongs = () => {
+      const filtered = song.filter((item) => {
+        const nameMatch =
+          item.name &&
+          item.name.toLowerCase().includes(songData.name.toLowerCase());
+        const artistMatch =
+          item.artist &&
+          item.artist.toLowerCase().includes(songData.artistName.toLowerCase());
+        const genreMatch =
+          songData.genre === "" ||
+          (item.genre._id && item.genre._id === songData.genre);
+        return nameMatch && artistMatch && genreMatch;
+      });
+      setFilteredSongs(filtered);
+    };
+    filterSongs();
+  }, [songData, song]);
+
   return (
     <Layout name="Songs">
       <div className="pageContents">
-        <div>
-        <Input
-                name="name"
-                label="Name"
-                type="text"
-                value={formData["name"]}
-                onChange={handleChange}
-                required={true}
-                className={styles.white}
-                validationHandler={validationHandler}
-                error={errors.name}
-              />
-              
-
-              <Select
-              name="genre"
-              value={formData["genre"]}
-              onChange={handleChange}
-              required={true}
-              data={genre}
-              filter="name"
-              filterValue="_id"
-              className="whiteBorder"
-              validationHandler={validationHandler}
-              error={errors.genre}
-              label="Genre"
-              labelClassName="whiteLabel"
-            />
+        <div className={styles.filterContainer}>
+          <div className={styles.large}>Filter Songs by:</div>
+          <Input
+            name="name"
+            label="Song Name"
+            type="text"
+            value={songData["name"]}
+            onChange={handleSongChange}
+            size="small"
+          />
+          <Input
+            name="artistName"
+            label="Artist Name"
+            type="text"
+            value={songData["artistName"]}
+            onChange={handleSongChange}
+            size="small"
+          />
+          <Select
+            name="genre"
+            value={songData["genre"]}
+            onChange={handleSongChange}
+            data={genre}
+            filter="name"
+            filterValue="_id"
+            label="Genre"
+            size="small"
+          />
         </div>
         <div className="cardFlex">
-          {song?.map((item, i) => (
+          {filteredSongs?.map((item, i) => (
             <SongCard
               key={i}
               song={item}
