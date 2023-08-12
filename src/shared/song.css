@@ -1,0 +1,44 @@
+.comments {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding: 1rem 2rem;
+}
+.postComment {
+  color: white;
+  padding: 1rem 2rem;
+}
+.postTitle {
+  padding: 1rem 2rem;
+  font-size: 13px;
+}
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+}
+.listContainer::-webkit-scrollbar {
+  width: 5px;
+}
+.listContainer::-webkit-scrollbar-track {
+  background-color: black;
+}
+.listContainer::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+.imgContainer {
+  display: flex;
+  width: 100%;
+  flex-basis: 50%;
+  max-height: 10rem;
+  overflow: hidden;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.imgContainer img {
+  /* width: 100%; */
+  object-fit: contain;
+  max-height: 9rem;
+  margin-bottom: 1rem;
+}
