@@ -19,3 +19,7 @@ export { default as Player } from "./Player";
 export { default as Options } from "./mocks";
 export { default as ImageUpload } from "./ImageUpload";
 export { default as Text } from "./Text";
+export { default as UserJumbotron } from "./Jumbotron/User";
+export { default as SongJumbotron } from "./Jumbotron/Song";
+export { default as DJJumbotron } from "./Jumbotron/DJ";
+export { default as BeatJumbotron } from "./Jumbotron/Beat";

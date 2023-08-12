@@ -3,12 +3,19 @@ import { useBeat } from "./User/beats";
 import { useCompetition } from "./User/competition";
 import { useArtist } from "./User/artist";
 import { useProducer } from "./User/producer";
-import { useSong, useLikeSong, usePlaySong } from "./User/songs";
+import {
+  useSong,
+  useLikeSong,
+  usePlaySong,
+  usePostComment,
+} from "./User/songs";
 import { useLikeComedy } from "./User/comedy";
 import { usePlaylist, useUpdatePlaylist } from "./User/playlist";
 import { useTalents, useTrends } from "./User/chart";
 import { useUpdateProfile, useUploadPhoto } from "./User/profile";
 import { useGenres } from "./Admin/genres";
+import { useLikeMix } from "./User/djbooth";
+import { useFollow, useLike, useWatchlist } from "./User/generic";
 
 export const hooks = {
   useEvent,
@@ -25,5 +32,11 @@ export const hooks = {
   useTrends,
   usePlaySong,
   useUpdateProfile,
-  useUploadPhoto,useGenres
+  useUploadPhoto,
+  useGenres,
+  usePostComment,
+  useLikeMix,
+  useFollow,
+  useLike,
+  useWatchlist,
 };
