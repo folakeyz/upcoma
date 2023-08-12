@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import {
   CompetitionCard,
   EventCard,
-  Player,
+  // Player,
   SongCard,
   TrendCard,
   UserCard,
@@ -371,7 +371,7 @@ const Home = () => {
         />
         {/* add to playlist */}
       </div>
-      <Player playlist={playList} />
+      {/* <Player playlist={playList} /> */}
     </Layout>
   );
 };

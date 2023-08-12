@@ -4,6 +4,8 @@
   "private": true,
   "proxy": "http://127.0.0.1:8000",
   "dependencies": {
+    "@minchat/react": "^1.5.22",
+    "@minchat/reactui": "^0.4.1",
     "@szhsin/react-menu": "^4.0.2",
     "@tanstack/react-query": "^4.32.6",
     "@testing-library/jest-dom": "^5.17.0",

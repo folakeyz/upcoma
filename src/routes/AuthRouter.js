@@ -35,6 +35,10 @@ const paths = [
     element: lazy(() => import("../modules/Auth/TC")),
   },
   {
+    path: "/app/songs",
+    element: lazy(() => import("../modules/Global/Songs")),
+  },
+  {
     path: "*",
     element: lazy(() => import("../modules/NotFound")),
   },

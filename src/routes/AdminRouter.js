@@ -27,6 +27,14 @@ const privateRoutes = [
     path: "profile/edit",
     element: lazy(() => import("../modules/Global/Profile/Edit")),
   },
+  {
+    path: "chats",
+    element: lazy(() => import("../modules/Global/Chat")),
+  },
+  {
+    path: "songs",
+    element: lazy(() => import("../modules/Global/Songs")),
+  },
 ];
 
 function Admin() {

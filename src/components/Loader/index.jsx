@@ -17,7 +17,7 @@ const Loader = () => {
         middleLineColor=""
         lastLineColor=""
       />
-      <p>Loading....</p>
+      <p>Please Wait....</p>
     </div>
   );
 };
