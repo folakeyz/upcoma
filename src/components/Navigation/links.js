@@ -205,7 +205,7 @@ export const userLinks = [
     ],
   },
   {
-    route: "/app/songs",
+    route: "/app/songs#",
     name: "Songs",
     Icon: BsMusicNoteBeamed,
     allowed: [
@@ -218,21 +218,39 @@ export const userLinks = [
       "Comedian",
       "Listener",
     ],
-  },
-  {
-    route: "/app/playlist",
-    name: "My Playlist",
-    Icon: FaMusic,
-    allowed: [
-      "Admin",
-      "Label",
-      "Producer",
-      "Artist",
-      "DJ",
-      "Comedian",
-      "Listener",
+    children: [
+      {
+        route: "/app/songs",
+        name: "Songs",
+        Icon: BsMusicNoteBeamed,
+        allowed: [
+          "All",
+          "Admin",
+          "Label",
+          "Producer",
+          "Artist",
+          "DJ",
+          "Comedian",
+          "Listener",
+        ],
+      },
+      {
+        route: "/app/playlist",
+        name: "My Playlist",
+        Icon: FaMusic,
+        allowed: [
+          "Admin",
+          "Label",
+          "Producer",
+          "Artist",
+          "DJ",
+          "Comedian",
+          "Listener",
+        ],
+      },
     ],
   },
+
   {
     route: "/app/bookings",
     name: "Bookings",
