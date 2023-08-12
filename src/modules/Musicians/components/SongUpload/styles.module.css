@@ -1,0 +1,46 @@
+.uploadContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+.InputContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 2rem;
+}
+.uploadWrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.uploadContainer span {
+  font-size: 12px;
+}
+.uploadContainer span a {
+  color: orangered;
+}
+.uploadBtn {
+  height: 3.5rem;
+  outline: none;
+  padding: 1rem 3rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  align-items: flex-start;
+  background: var(--black);
+  color: white;
+  text-align: left;
+}
+
+.uploadWrapper input[type="file"] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
