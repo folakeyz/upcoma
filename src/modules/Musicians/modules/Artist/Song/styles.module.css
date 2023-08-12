@@ -1,0 +1,26 @@
+.songContainer {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  border-top: 2px dotted white;
+  margin-top: 1rem;
+  padding-top: 2rem;
+}
+
+.margin {
+  margin-top: 1.5rem;
+}
+
+.songList {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+}
+
+.card {
+  display: flex;
+  flex: 0.9;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
