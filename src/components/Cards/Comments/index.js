@@ -10,7 +10,7 @@ const CommentsCard = ({ item }) => {
           {item?.user?.photo ? (
             <img src={item?.user?.photo} alt={item?.user?.firstname} />
           ) : (
-            Avatar(item?.user?.gender)
+            Avatar(item?.user?.gender || "Male")
           )}
         </div>
         <div className={styles.text}>

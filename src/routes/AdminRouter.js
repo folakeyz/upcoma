@@ -59,6 +59,54 @@ const privateRoutes = [
     path: "event/:id",
     element: lazy(() => import("../modules/Global/Events/Single")),
   },
+  {
+    path: "dj",
+    element: lazy(() => import("../modules/Global/DJBooth")),
+  },
+  {
+    path: "dj/:id",
+    element: lazy(() => import("../modules/Global/DJBooth/Single")),
+  },
+  {
+    path: "competitions",
+    element: lazy(() => import("../modules/Global/Competition")),
+  },
+  {
+    path: "competition/:id",
+    element: lazy(() => import("../modules/Global/Competition/Single")),
+  },
+  {
+    path: "comedy",
+    element: lazy(() => import("../modules/Global/Comedy")),
+  },
+  {
+    path: "comedy/:id",
+    element: lazy(() => import("../modules/Global/Comedy/SingleComedy")),
+  },
+  {
+    path: "beats",
+    element: lazy(() => import("../modules/Global/Beats")),
+  },
+  {
+    path: "beat/:id",
+    element: lazy(() => import("../modules/Global/Beats/SingleBeat")),
+  },
+  {
+    path: "bookings",
+    element: lazy(() => import("../modules/Global/Booking")),
+  },
+  {
+    path: "trending",
+    element: lazy(() => import("../modules/Global/Charts")),
+  },
+  {
+    path: "toptalents",
+    element: lazy(() => import("../modules/Global/Charts/TopTalents")),
+  },
+  {
+    path: "topsongs",
+    element: lazy(() => import("../modules/Global/Charts/TopSongs")),
+  },
 ];
 
 function Admin() {

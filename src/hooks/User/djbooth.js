@@ -109,7 +109,7 @@ export function useLikeMix() {
   return { mutate };
 }
 
-export function usePostComment() {
+export function usePostMixComment() {
   const queryClient = useQueryClient();
   const { mutate, reset, isSuccess } = useMutation({
     mutationFn: (formData) => postComment(formData),

@@ -7,7 +7,7 @@ const sexImages = {
   Female: female,
 };
 
-const Avatar = ({ sex }) => {
+const Avatar = ({ sex = "Male" }) => {
   const imgSrc = sexImages[sex] || male;
   return <img src={imgSrc} alt="DP" />;
 };
