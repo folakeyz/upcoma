@@ -5,6 +5,8 @@ import Layout from "../../../layout";
 import { hooks } from "../../../hooks";
 import { toast } from "react-toastify";
 import PlaylistModal from "../../Home/PlaylistModal";
+import { Input, Select } from "mtforms";
+import styles from '../Profile/styles.module.css'
 const Songs = () => {
   const [playList, setPlaylist] = useState([]);
   const [open, setOpen] = useState();
@@ -55,9 +57,39 @@ const Songs = () => {
       position: toast.POSITION.BOTTOM_CENTER,
     });
   }
+  const genre = hooks.useGenres()
   return (
     <Layout name="Songs">
       <div className="pageContents">
+        <div>
+        <Input
+                name="name"
+                label="Name"
+                type="text"
+                value={formData["name"]}
+                onChange={handleChange}
+                required={true}
+                className={styles.white}
+                validationHandler={validationHandler}
+                error={errors.name}
+              />
+              
+
+              <Select
+              name="genre"
+              value={formData["genre"]}
+              onChange={handleChange}
+              required={true}
+              data={genre}
+              filter="name"
+              filterValue="_id"
+              className="whiteBorder"
+              validationHandler={validationHandler}
+              error={errors.genre}
+              label="Genre"
+              labelClassName="whiteLabel"
+            />
+        </div>
         <div className="cardFlex">
           {song?.map((item, i) => (
             <SongCard
