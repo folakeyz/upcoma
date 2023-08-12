@@ -16,6 +16,7 @@ import { useUpdateProfile, useUploadPhoto } from "./User/profile";
 import { useGenres } from "./Admin/genres";
 import { useLikeMix } from "./User/djbooth";
 import { useFollow, useLike, useWatchlist } from "./User/generic";
+import { useUploadService } from "./User/services";
 
 export const hooks = {
   useEvent,
@@ -39,4 +40,5 @@ export const hooks = {
   useFollow,
   useLike,
   useWatchlist,
+  useUploadService,
 };
