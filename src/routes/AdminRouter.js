@@ -35,6 +35,14 @@ const privateRoutes = [
     path: "songs",
     element: lazy(() => import("../modules/Global/Songs")),
   },
+  {
+    path: "song/:id",
+    element: lazy(() => import("../modules/Global/Songs/SingleSong")),
+  },
+  {
+    path: "services",
+    element: lazy(() => import("../modules/Global/Services")),
+  },
 ];
 
 function Admin() {
