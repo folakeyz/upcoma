@@ -8,6 +8,7 @@ import { useLikeComedy } from "./User/comedy";
 import { usePlaylist, useUpdatePlaylist } from "./User/playlist";
 import { useTalents, useTrends } from "./User/chart";
 import { useUpdateProfile, useUploadPhoto } from "./User/profile";
+import { useGenres } from "./Admin/genres";
 
 export const hooks = {
   useEvent,
@@ -24,5 +25,5 @@ export const hooks = {
   useTrends,
   usePlaySong,
   useUpdateProfile,
-  useUploadPhoto,
+  useUploadPhoto,useGenres
 };
