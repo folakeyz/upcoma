@@ -1,0 +1,23 @@
+.eventImage {
+  width: 100%;
+  display: flex;
+  max-height: 30rem;
+  overflow: hidden;
+  /* flex-direction: column; */
+  padding: 2rem;
+}
+.eventImage img {
+  width: 100%;
+  object-fit: contain;
+  max-height: 30rem;
+}
+
+.eventText {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+.eventText p {
+  line-height: 2rem;
+  text-align: justify;
+}
