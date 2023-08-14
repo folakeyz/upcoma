@@ -32,9 +32,9 @@ import { useUploadComedy, useDeleteComedy } from "./Admin/comedy";
 import { useUploadBeat, useDeleteBeat } from "./Admin/beats";
 import { useDeleteMix, useUploadMix } from "./Admin/mix";
 import { useMyBooking as useAdminBooking } from "./Admin/booking";
-import { useJoinedComp } from "./Admin/comp";
+import { useJoinedComp, useUploadComp, useDeleteComp } from "./Admin/comp";
 import { useAnalytics } from "./Admin/dashboard";
-import { useRegEvent } from "./Admin/events";
+import { useRegEvent, useDeleteEvent, useUploadEvent } from "./Admin/events";
 import {
   useLikeMix,
   usePlayMix,
@@ -96,4 +96,8 @@ export const hooks = {
   useJoinedComp,
   useAnalytics,
   useRegEvent,
+  useUploadComp,
+  useDeleteComp,
+  useDeleteEvent,
+  useUploadEvent,
 };
