@@ -27,7 +27,6 @@ const MyWatchlist = () => {
     { title: "Followers", field: "followersCount" },
     { title: "Likes", field: "likesCount" },
   ];
-
   return (
     <Layout name="My Watchlist">
       <div className="pageContents">
