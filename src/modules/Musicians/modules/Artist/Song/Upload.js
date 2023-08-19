@@ -56,6 +56,7 @@ const UploadSong = () => {
     reset();
     navigate("/app/musician/song");
   }
+  console.log(formData, "songs");
   return (
     <Layout name="Upload Songs">
       <div className="pageContents">

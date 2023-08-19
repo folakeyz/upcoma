@@ -2,9 +2,6 @@ import React, { useContext, useState } from "react";
 import styles from "./styles.module.css";
 // import logo from "../../assets/images/logo.png";
 import { useNavigate } from "react-router-dom";
-// import { useDispatch, useSelector } from "react-redux";
-
-//import { userLogout } from "../../redux/actions/authActions";
 
 import { AiOutlineSearch } from "react-icons/ai";
 import Links from "./Links";
